@@ -1,0 +1,493 @@
+{
+  "products": [
+    {
+      "id": "WIN-0001",
+      "category": "PCD Solutions",
+      "brand": "Win Win Tooling Solutions",
+      "brandSlug": "win-win-tooling-solutions",
+      "productName": "Custom PCD Turning Tool",
+      "slug": "custom-pcd-turning-tool",
+      "productType": "PCD Insert Tool",
+      "materialCompatibility": "Aluminum/Non-Ferrous",
+      "application": "High-speed turning",
+      "keyFeatures": "High wear resistance, Custom geometry",
+      "features": ["High wear resistance", "Custom geometry"],
+      "image": "/assets/winwinTool1.png",
+      "description": "Premium custom PCD turning tool designed for high-speed machining of aluminum and non-ferrous materials. Features exceptional wear resistance and custom geometry options for optimal performance.",
+      "specifications": {
+        "Material": "Polycrystalline Diamond (PCD)",
+        "Hardness": "6000-10000 HV",
+        "Application": "High-speed turning",
+        "Coolant": "Dry/Wet machining compatible"
+      }
+    },
+    {
+      "id": "WIN-0002",
+      "category": "PCD Solutions",
+      "brand": "Win Win Tooling Solutions",
+      "brandSlug": "win-win-tooling-solutions",
+      "productName": "PCD Milling Cutter",
+      "slug": "pcd-milling-cutter",
+      "productType": "PCD Cutter",
+      "materialCompatibility": "Aluminum/Composites",
+      "application": "Milling",
+      "keyFeatures": "Long tool life, High precision",
+      "features": ["Long tool life", "High precision"],
+      "image": "/assets/winwinTool2.png",
+      "description": "High-performance PCD milling cutter for aluminum and composite materials. Delivers exceptional tool life and precision in demanding milling applications.",
+      "specifications": {
+        "Material": "Polycrystalline Diamond (PCD)",
+        "Edge Quality": "Ultra-fine finish",
+        "Tool Life": "10x longer than carbide",
+        "Surface Finish": "Ra 0.2-0.4 μm achievable"
+      }
+    },
+    {
+      "id": "PAL-0003",
+      "category": "Carbide Tools",
+      "brand": "Palbit",
+      "brandSlug": "palbit",
+      "productName": "Carbide End Mill - Flat",
+      "slug": "carbide-end-mill-flat",
+      "productType": "End Mill",
+      "materialCompatibility": "Steel/Stainless Steel",
+      "application": "Slotting/Profiling",
+      "keyFeatures": "High precision, Coated carbide",
+      "features": ["High precision", "Coated carbide"],
+      "image": "/assets/55HRCMillTool.png",
+      "description": "Premium Palbit carbide flat end mill with advanced coating technology. Ideal for precision slotting and profiling operations in steel and stainless steel.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Coating": "TiAlN Nanocomposite",
+        "Helix Angle": "35°-45°",
+        "Hardness Range": "Up to 55 HRC"
+      }
+    },
+    {
+      "id": "PAL-0004",
+      "category": "Carbide Tools",
+      "brand": "Palbit",
+      "brandSlug": "palbit",
+      "productName": "Carbide Drill",
+      "slug": "carbide-drill",
+      "productType": "Drill",
+      "materialCompatibility": "Alloy Steel/SS",
+      "application": "Drilling",
+      "keyFeatures": "High penetration rate, Coolant-through option",
+      "features": ["High penetration rate", "Coolant-through option"],
+      "image": "/assets/winwinTool3.png",
+      "description": "High-performance Palbit carbide drill with optional coolant-through design. Engineered for aggressive drilling in alloy steel and stainless steel.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Point Angle": "140°",
+        "Coolant": "Through-spindle option available",
+        "L/D Ratio": "3xD to 12xD available"
+      }
+    },
+    {
+      "id": "PAL-0005",
+      "category": "Carbide Tools",
+      "brand": "Palbit",
+      "brandSlug": "palbit",
+      "productName": "Threading Insert",
+      "slug": "threading-insert",
+      "productType": "Insert",
+      "materialCompatibility": "Steel/Alloy",
+      "application": "Thread cutting",
+      "keyFeatures": "Precision threading, Replaceable inserts",
+      "features": ["Precision threading", "Replaceable inserts"],
+      "image": "/assets/winwinTool4.png",
+      "description": "Precision threading inserts from Palbit for accurate thread cutting in steel and alloy materials. Easy-change design for maximum productivity.",
+      "specifications": {
+        "Thread Types": "Metric, UN, Whitworth",
+        "Pitch Range": "0.5mm - 6mm",
+        "Grade Options": "Multiple grades available",
+        "Chipbreaker": "Optimized geometry"
+      }
+    },
+    {
+      "id": "HAN-0006",
+      "category": "End Mills",
+      "brand": "HANS",
+      "brandSlug": "hans",
+      "productName": "Micro End Mill 0.5mm",
+      "slug": "micro-end-mill-0-5mm",
+      "productType": "End Mill",
+      "materialCompatibility": "Tool Steel up to 70 HRC",
+      "application": "Micro machining",
+      "keyFeatures": "Ultra-fine grain carbide",
+      "features": ["Ultra-fine grain carbide"],
+      "image": "/assets/neckMillingTool1.png",
+      "description": "HANS micro end mill for precision micro-machining applications. Ultra-fine grain carbide construction for exceptional edge retention in hardened tool steels.",
+      "specifications": {
+        "Diameter": "0.5mm",
+        "Material": "Ultra-fine grain carbide",
+        "Hardness": "Up to 70 HRC",
+        "Flutes": "2 flute"
+      }
+    },
+    {
+      "id": "HAN-0007",
+      "category": "End Mills",
+      "brand": "HANS",
+      "brandSlug": "hans",
+      "productName": "Ball Nose End Mill",
+      "slug": "ball-nose-end-mill",
+      "productType": "End Mill",
+      "materialCompatibility": "Stainless/Titanium",
+      "application": "3D contouring",
+      "keyFeatures": "Smooth surface finish",
+      "features": ["Smooth surface finish"],
+      "image": "/assets/stdBallEndTool.png",
+      "description": "HANS ball nose end mill for superior 3D contouring and finishing. Delivers smooth surface finishes in stainless steel and titanium.",
+      "specifications": {
+        "Geometry": "Ball Nose",
+        "Flutes": "2-4 flute options",
+        "Coating": "Multi-layer PVD",
+        "Surface Finish": "Mirror finish capable"
+      }
+    },
+    {
+      "id": "MII-0008",
+      "category": "End Mills",
+      "brand": "MIICUT",
+      "brandSlug": "miicut",
+      "productName": "General Purpose End Mill",
+      "slug": "general-purpose-end-mill",
+      "productType": "End Mill",
+      "materialCompatibility": "PKN Materials up to 50 HRC",
+      "application": "Milling",
+      "keyFeatures": "Cost-effective, High performance",
+      "features": ["Cost-effective", "High performance"],
+      "image": "/assets/economySeriesTool1.png",
+      "description": "MIICUT general purpose end mill offering excellent value with high performance. Suitable for a wide range of materials up to 50 HRC.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Hardness Range": "Up to 50 HRC",
+        "Flutes": "4 flute standard",
+        "Value": "Cost-effective solution"
+      }
+    },
+    {
+      "id": "MII-0009",
+      "category": "End Mills",
+      "brand": "MIICUT",
+      "brandSlug": "miicut",
+      "productName": "Roughing End Mill",
+      "slug": "roughing-end-mill",
+      "productType": "End Mill",
+      "materialCompatibility": "Carbon Steel",
+      "application": "Rough machining",
+      "keyFeatures": "Chip breaker geometry",
+      "features": ["Chip breaker geometry"],
+      "image": "/assets/roughEndMill.png",
+      "description": "MIICUT roughing end mill with aggressive chip breaker geometry for high material removal rates in carbon steel applications.",
+      "specifications": {
+        "Geometry": "Roughing/Corncob",
+        "MRR": "High material removal rate",
+        "Chipbreaker": "Wave pattern geometry",
+        "Coolant": "Flood coolant recommended"
+      }
+    },
+    {
+      "id": "KTA-0010",
+      "category": "Tool Holders",
+      "brand": "KTA",
+      "brandSlug": "kta",
+      "productName": "BT40 ER Collet Chuck",
+      "slug": "bt40-er-collet-chuck",
+      "productType": "Tool Holder",
+      "materialCompatibility": "Universal",
+      "application": "CNC Milling",
+      "keyFeatures": "High concentricity, Balanced design",
+      "features": ["High concentricity", "Balanced design"],
+      "image": "/assets/winwinTool5.png",
+      "description": "KTA BT40 ER collet chuck with precision ground taper for high concentricity. Balanced design ensures smooth operation at high RPMs.",
+      "specifications": {
+        "Taper": "BT40",
+        "Collet System": "ER16/ER20/ER32",
+        "Runout": "<0.003mm",
+        "Balance": "G2.5 @ 25,000 RPM"
+      }
+    },
+    {
+      "id": "KTA-0011",
+      "category": "Tool Holders",
+      "brand": "KTA",
+      "brandSlug": "kta",
+      "productName": "HSK Tool Holder",
+      "slug": "hsk-tool-holder",
+      "productType": "Spindle Holder",
+      "materialCompatibility": "High-speed CNC",
+      "application": "High-speed machining",
+      "keyFeatures": "Precision ground",
+      "features": ["Precision ground"],
+      "image": "/assets/winwinTool6.png",
+      "description": "KTA HSK tool holder for high-speed machining centers. Precision ground for exceptional accuracy and repeatability.",
+      "specifications": {
+        "Taper": "HSK-A63",
+        "Max RPM": "40,000 RPM",
+        "Clamping": "Dual-contact design",
+        "Material": "Heat-treated alloy steel"
+      }
+    },
+    {
+      "id": "SCH-0012",
+      "category": "Tool Holders",
+      "brand": "Schussler",
+      "brandSlug": "schussler",
+      "productName": "Hydraulic Chuck",
+      "slug": "hydraulic-chuck",
+      "productType": "Tool Holder",
+      "materialCompatibility": "Universal",
+      "application": "High precision milling",
+      "keyFeatures": "Vibration dampening",
+      "features": ["Vibration dampening"],
+      "image": "/assets/winwinTool7.png",
+      "description": "Schussler hydraulic chuck with superior vibration dampening for ultra-precise machining. Self-centering design ensures perfect concentricity.",
+      "specifications": {
+        "Clamping": "Hydraulic expansion",
+        "Runout": "<0.002mm",
+        "Dampening": "Built-in vibration absorption",
+        "Tool Life": "Extended tool life"
+      }
+    },
+    {
+      "id": "SPE-0013",
+      "category": "Tool Presetting",
+      "brand": "Speroni",
+      "brandSlug": "speroni",
+      "productName": "Tool Presetter Machine",
+      "slug": "tool-presetter-machine",
+      "productType": "Measurement System",
+      "materialCompatibility": "All Tool Types",
+      "application": "Tool measurement",
+      "keyFeatures": "High accuracy, Digital interface",
+      "features": ["High accuracy", "Digital interface"],
+      "image": "/assets/winwinTool8.png",
+      "description": "Speroni tool presetting machine for precise tool measurement and setup. Digital interface enables quick data transfer to CNC controls.",
+      "specifications": {
+        "Accuracy": "±0.001mm",
+        "Interface": "Digital output to CNC",
+        "Camera": "High-resolution optics",
+        "Software": "Intuitive touchscreen interface"
+      }
+    },
+    {
+      "id": "DIJ-0014",
+      "category": "Carbide Tools",
+      "brand": "DIJET",
+      "brandSlug": "dijet",
+      "productName": "Indexable Milling Cutter",
+      "slug": "indexable-milling-cutter",
+      "productType": "Milling Cutter",
+      "materialCompatibility": "Steel/Cast Iron",
+      "application": "Face milling",
+      "keyFeatures": "Replaceable inserts, High rigidity",
+      "features": ["Replaceable inserts", "High rigidity"],
+      "image": "/assets/winwinTool9.png",
+      "description": "DIJET indexable milling cutter with high-rigidity body and replaceable inserts. Designed for efficient face milling of steel and cast iron.",
+      "specifications": {
+        "Body Material": "Heat-treated steel",
+        "Inserts": "Multiple grades available",
+        "Geometry": "Positive rake angle",
+        "Pocket Design": "High precision pockets"
+      }
+    },
+    {
+      "id": "ETP-0015",
+      "category": "Hydraulic Clamping",
+      "brand": "ETP",
+      "brandSlug": "etp",
+      "productName": "Hydraulic Sleeve",
+      "slug": "hydraulic-sleeve",
+      "productType": "Clamping Device",
+      "materialCompatibility": "Shaft-based systems",
+      "application": "Shaft locking",
+      "keyFeatures": "Quick installation, High torque transmission",
+      "features": ["Quick installation", "High torque transmission"],
+      "image": "/assets/winwinTool10.png",
+      "description": "ETP hydraulic sleeve for secure shaft clamping with high torque transmission. Quick installation without shaft modification.",
+      "specifications": {
+        "Clamping": "Hydraulic expansion",
+        "Torque": "High torque capacity",
+        "Installation": "No shaft modification needed",
+        "Repeatability": "Perfect concentricity"
+      }
+    },
+    {
+      "id": "POS-0016",
+      "category": "Threading Tools",
+      "brand": "Posithread",
+      "brandSlug": "posithread",
+      "productName": "Thread Milling Cutter",
+      "slug": "thread-milling-cutter",
+      "productType": "Thread Tool",
+      "materialCompatibility": "Alloy Steel",
+      "application": "Thread milling",
+      "keyFeatures": "Precision threads, Carbide body",
+      "features": ["Precision threads", "Carbide body"],
+      "image": "/assets/winwinTool11.png",
+      "description": "Posithread thread milling cutter for precision thread production in alloy steel. Solid carbide body ensures long tool life and accuracy.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Thread Types": "Metric, UN threads",
+        "Pitch Range": "Multiple pitches per tool",
+        "Accuracy": "6H/6g thread quality"
+      }
+    },
+    {
+      "id": "EMK-0017",
+      "category": "Precision Tools",
+      "brand": "Emkay Tools",
+      "brandSlug": "emkay-tools",
+      "productName": "Carbide Reamer",
+      "slug": "carbide-reamer",
+      "productType": "Reamer",
+      "materialCompatibility": "Steel/Aluminum",
+      "application": "Finishing holes",
+      "keyFeatures": "High dimensional accuracy",
+      "features": ["High dimensional accuracy"],
+      "image": "/assets/HRC55Tool.png",
+      "description": "Emkay carbide reamer for precision hole finishing. Delivers tight tolerances and excellent surface finish in steel and aluminum.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Tolerance": "H7 standard",
+        "Flutes": "4-6 flute options",
+        "Surface Finish": "Ra 0.4 achievable"
+      }
+    },
+    {
+      "id": "WIN-0018",
+      "category": "Solid Carbide",
+      "brand": "Win Win Tooling Solutions",
+      "brandSlug": "win-win-tooling-solutions",
+      "productName": "Carbide Ball Nose End Mill",
+      "slug": "carbide-ball-nose-end-mill",
+      "productType": "End Mill",
+      "materialCompatibility": "Alloy Steel",
+      "application": "Finishing operations",
+      "keyFeatures": "Wear resistant coating",
+      "features": ["Wear resistant coating"],
+      "image": "/assets/stdBallEndTool.png",
+      "description": "Win Win carbide ball nose end mill with advanced wear-resistant coating for finishing operations. Perfect for 3D contouring in alloy steel.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Coating": "AlTiN Nanocomposite",
+        "Geometry": "Ball Nose",
+        "Hardness": "Up to 58 HRC"
+      }
+    },
+    {
+      "id": "WIN-0019",
+      "category": "Solid Carbide",
+      "brand": "Win Win Tooling Solutions",
+      "brandSlug": "win-win-tooling-solutions",
+      "productName": "Carbide Drill with Coolant",
+      "slug": "carbide-drill-with-coolant",
+      "productType": "Drill",
+      "materialCompatibility": "Stainless Steel",
+      "application": "Deep hole drilling",
+      "keyFeatures": "Internal coolant channels",
+      "features": ["Internal coolant channels"],
+      "image": "/assets/winwinTool2.png",
+      "description": "Win Win carbide drill with internal coolant channels for deep hole drilling in stainless steel. Superior chip evacuation and tool life.",
+      "specifications": {
+        "Material": "Solid Carbide",
+        "Coolant": "Internal through-spindle",
+        "L/D Ratio": "Up to 20xD",
+        "Point Geometry": "Self-centering design"
+      }
+    }
+  ],
+  "categories": [
+    "PCD Solutions",
+    "Carbide Tools",
+    "End Mills",
+    "Tool Holders",
+    "Tool Presetting",
+    "Hydraulic Clamping",
+    "Threading Tools",
+    "Precision Tools",
+    "Solid Carbide"
+  ],
+  "brands": [
+    {
+      "name": "Win Win Tooling Solutions",
+      "slug": "win-win-tooling-solutions",
+      "logo": "/assets/winwinTool1.png",
+      "description": "Premium PCD and solid carbide solutions",
+      "productCount": 4
+    },
+    {
+      "name": "Palbit",
+      "slug": "palbit",
+      "logo": "/assets/55HRCMillTool.png",
+      "description": "World-class carbide cutting tools",
+      "productCount": 3
+    },
+    {
+      "name": "HANS",
+      "slug": "hans",
+      "logo": "/assets/neckMillingTool1.png",
+      "description": "Precision micro and ball nose end mills",
+      "productCount": 2
+    },
+    {
+      "name": "MIICUT",
+      "slug": "miicut",
+      "logo": "/assets/economySeriesTool1.png",
+      "description": "High-performance end mills",
+      "productCount": 2
+    },
+    {
+      "name": "KTA",
+      "slug": "kta",
+      "logo": "/assets/winwinTool5.png",
+      "description": "Premium spindle tooling systems",
+      "productCount": 2
+    },
+    {
+      "name": "Schussler",
+      "slug": "schussler",
+      "logo": "/assets/winwinTool7.png",
+      "description": "Hydraulic tool holding solutions",
+      "productCount": 1
+    },
+    {
+      "name": "Speroni",
+      "slug": "speroni",
+      "logo": "/assets/winwinTool8.png",
+      "description": "Tool presetting and measurement",
+      "productCount": 1
+    },
+    {
+      "name": "DIJET",
+      "slug": "dijet",
+      "logo": "/assets/winwinTool9.png",
+      "description": "Indexable cutting tools",
+      "productCount": 1
+    },
+    {
+      "name": "ETP",
+      "slug": "etp",
+      "logo": "/assets/winwinTool10.png",
+      "description": "Hydraulic clamping systems",
+      "productCount": 1
+    },
+    {
+      "name": "Posithread",
+      "slug": "posithread",
+      "logo": "/assets/winwinTool11.png",
+      "description": "Threading solutions",
+      "productCount": 1
+    },
+    {
+      "name": "Emkay Tools",
+      "slug": "emkay-tools",
+      "logo": "/assets/HRC55Tool.png",
+      "description": "Precision reaming tools",
+      "productCount": 1
+    }
+  ]
+}
