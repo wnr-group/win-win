@@ -3,11 +3,13 @@ import { motion } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
 import Modal from '../ui/Modal'
 import Button from '../ui/Button'
-import Input, { Textarea, Select } from '../ui/Input'
+import Input, { Textarea } from '../ui/Input'
+import { supabase } from '../../utils/supabase'
 
 export default function QuoteModal({ isOpen, onClose, product = null }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,27 +30,50 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setIsSuccess(true)
-
-    // Reset after delay
-    setTimeout(() => {
-      setIsSuccess(false)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        product: '',
-        quantity: '',
-        message: '',
+    try {
+      const { error: invokeError } = await supabase.functions.invoke('send-email', {
+        body: {
+          type: 'quote',
+          data: formData,
+        },
       })
-      onClose()
-    }, 2000)
+
+      if (invokeError) {
+        throw invokeError
+      }
+
+      setIsSuccess(true)
+
+      setTimeout(() => {
+        setIsSuccess(false)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          product: '',
+          quantity: '',
+          message: '',
+        })
+        onClose()
+      }, 2000)
+    } catch (submitError) {
+      if (submitError?.context) {
+        try {
+          const errorBody = await submitError.context.json()
+          setError(errorBody?.error || 'Failed to send quotation request. Please try again.')
+          return
+        } catch {
+          // fall through to generic message
+        }
+      }
+
+      setError(submitError?.message || 'Failed to send quotation request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -158,6 +183,10 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
               Submit Request
             </Button>
           </div>
+
+          {error ? (
+            <p className="text-sm text-red-600 text-right">{error}</p>
+          ) : null}
         </form>
       )}
     </Modal>
