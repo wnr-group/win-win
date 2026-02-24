@@ -37,7 +37,7 @@ export default function ProductDetail({ openQuoteModal }) {
     )
   }
 
-  // Get related products
+ 
   const relatedProducts = productsData.products
     .filter(
       (p) =>
@@ -73,7 +73,7 @@ export default function ProductDetail({ openQuoteModal }) {
         </script>
       </Helmet>
 
-      {/* Breadcrumb */}
+    
       <div className="bg-gray-50 py-4">
         <div className="container-custom">
           <nav className="flex items-center text-sm text-gray-600">
@@ -90,7 +90,7 @@ export default function ProductDetail({ openQuoteModal }) {
         </div>
       </div>
 
-      {/* Product Details */}
+    
       <section className="py-12">
         <div className="container-custom">
           <button
@@ -102,7 +102,7 @@ export default function ProductDetail({ openQuoteModal }) {
           </button>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left - Image */}
+         
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -252,7 +252,7 @@ export default function ProductDetail({ openQuoteModal }) {
         </div>
       </section>
 
-      {/* Related Products */}
+     
       {relatedProducts.length > 0 && (
         <section className="py-16 bg-gray-50">
           <div className="container-custom">

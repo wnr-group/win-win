@@ -14,7 +14,7 @@ export default function ProductCard({ product, index = 0 }) {
         to={`/products/${product.brandSlug}/${product.slug}`}
         className="group block bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
       >
-        {/* Image */}
+        
         <div className="relative aspect-product bg-gray-50 overflow-hidden">
           <img
             src={product.image}
@@ -30,7 +30,7 @@ export default function ProductCard({ product, index = 0 }) {
             </Badge>
           </div>
 
-          {/* Hover overlay */}
+           
           <div className="absolute inset-0 bg-navy-500/0 group-hover:bg-navy-500/10 transition-colors duration-300" />
         </div>
 
@@ -51,7 +51,7 @@ export default function ProductCard({ product, index = 0 }) {
             {product.productType}
           </p>
 
-          {/* Features */}
+           
           {product.features && product.features.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-4">
               {product.features.slice(0, 2).map((feature) => (
@@ -65,7 +65,7 @@ export default function ProductCard({ product, index = 0 }) {
             </div>
           )}
 
-          {/* CTA */}
+          
           <div className="flex items-center justify-between pt-3 border-t border-gray-100">
             <span className="text-sm text-gray-500">
               {product.materialCompatibility}

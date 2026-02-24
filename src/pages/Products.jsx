@@ -95,7 +95,7 @@ export default function Products() {
         />
       </Helmet>
 
-      {/* Hero Section */}
+     
       <section className="bg-gradient-to-br from-navy-500 to-navy-600 py-16">
         <div className="container-custom">
           <motion.div
@@ -114,7 +114,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Products Section */}
+    
       <section className="py-12 bg-gray-50">
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row gap-8">
@@ -206,7 +206,7 @@ export default function Products() {
                 </div>
               </div>
 
-              {/* Products Grid */}
+             
               {filteredProducts.length > 0 ? (
                 <div
                   className={`grid gap-6 ${
