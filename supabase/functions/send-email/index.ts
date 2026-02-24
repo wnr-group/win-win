@@ -15,8 +15,6 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3000',
 ]
 
-const RECIPIENT_EMAIL = 'eshwarpaygude@gmail.com'
-
 const getCorsHeaders = (origin: string | null) => {
   const isAllowedLocalhost = !!origin && /^https?:\/\/localhost:\d+$/.test(origin)
   const isAllowedOrigin = !!origin && (ALLOWED_ORIGINS.includes(origin) || isAllowedLocalhost)
@@ -105,9 +103,10 @@ denoRuntime.serve(async (req: Request) => {
   try {
     const mailgunApiKey = denoRuntime.env.get('MAILGUN_API_KEY')
     const mailgunDomain = denoRuntime.env.get('MAILGUN_DOMAIN')
+    const recipientEmail = denoRuntime.env.get('RECIPIENT_EMAIL')
 
-    if (!mailgunApiKey || !mailgunDomain) {
-      return new Response(JSON.stringify({ error: 'Mailgun is not configured' }), {
+    if (!mailgunApiKey || !mailgunDomain || !recipientEmail) {
+      return new Response(JSON.stringify({ error: 'Email service is not configured' }), {
         headers: corsHeaders,
         status: 500,
       })
@@ -137,7 +136,7 @@ denoRuntime.serve(async (req: Request) => {
 
     const formBody = new URLSearchParams()
     formBody.set('from', `WinWin Tooling <mailgun@${mailgunDomain}>`)
-    formBody.set('to', RECIPIENT_EMAIL)
+    formBody.set('to', recipientEmail)
     formBody.set('subject', emailTemplate.subject)
     formBody.set('html', emailTemplate.html)
 
@@ -156,7 +155,7 @@ denoRuntime.serve(async (req: Request) => {
 
       if (isSandboxRestriction) {
         return new Response(JSON.stringify({
-          error: `Mailgun sandbox restriction: authorize ${RECIPIENT_EMAIL} as an Authorized Recipient in Mailgun, or use a custom Mailgun domain.`,
+          error: `Mailgun sandbox restriction: authorize ${recipientEmail} as an Authorized Recipient in Mailgun, or use a custom Mailgun domain.`,
         }), {
           headers: corsHeaders,
           status: 502,
