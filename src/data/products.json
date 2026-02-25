@@ -83,6 +83,7 @@
         "Balancing": "High-Speed CNC Compatible"
       }
     },
+
     {
       "id": "PAL-0003",
       "category": "Carbide Tools",
@@ -211,6 +212,7 @@
         "Coolant Compatibility": "Dry / Flood / High-Pressure Coolant"
       }
     },
+
     {
       "id": "HAN-0006",
       "category": "End Mills",
@@ -299,17 +301,17 @@
       }
     },
     {
-      "id": "MII-0008",
-      "category": "End Mills",
-      "brand": "MIICUT",
-      "brandSlug": "miicut",
-      "productName": "General Purpose End Mill",
-      "slug": "general-purpose-end-mill",
+      "id": "WIN-0021",
+      "category": "Solid Carbide",
+      "brand": "Win Win Tooling Solutions",
+      "brandSlug": "win-win-tooling-solutions",
+      "productName": "HRC58 Economy Series - 4 Flute Flat End Mill",
+      "slug": "hrc58-economy-4f-flat-end-mill",
       "productType": "End Mill",
-      "materialCompatibility": "PKN Materials up to 50 HRC",
-      "application": "Milling",
-      "keyFeatures": "Cost-effective, High performance",
-      "features": ["Cost-effective", "High performance"],
+      "materialCompatibility": "Steel",
+      "application": "General machining",
+      "keyFeatures": "TiSiN coating",
+      "features": ["Ultra-fine carbide", "Improved wear resistance"],
       "image": "/assets/economySeriesTool1.png",
       "images": [
         "/assets/economySeriesTool1.png",
@@ -343,12 +345,12 @@
       }
     },
     {
-      "id": "MII-0009",
-      "category": "End Mills",
-      "brand": "MIICUT",
-      "brandSlug": "miicut",
-      "productName": "Roughing End Mill",
-      "slug": "roughing-end-mill",
+      "id": "WIN-0022",
+      "category": "Solid Carbide",
+      "brand": "Win Win Tooling Solutions",
+      "brandSlug": "win-win-tooling-solutions",
+      "productName": "HRC58 Economy Series - 2 Flute Ball Nose",
+      "slug": "hrc58-economy-2f-ball-nose",
       "productType": "End Mill",
       "materialCompatibility": "Carbon Steel",
       "application": "Rough machining",
@@ -731,12 +733,12 @@
       }
     },
     {
-      "id": "WIN-0018",
+      "id": "WIN-0023",
       "category": "Solid Carbide",
       "brand": "Win Win Tooling Solutions",
       "brandSlug": "win-win-tooling-solutions",
-      "productName": "Carbide Ball Nose End Mill",
-      "slug": "carbide-ball-nose-end-mill",
+      "productName": "HRC65 Premium Series End Mill",
+      "slug": "hrc65-premium-end-mill",
       "productType": "End Mill",
       "materialCompatibility": "Alloy Steel",
       "application": "Finishing operations",
@@ -775,7 +777,7 @@
       }
     },
     {
-      "id": "WIN-0019",
+      "id": "WIN-0024",
       "category": "Solid Carbide",
       "brand": "Win Win Tooling Solutions",
       "brandSlug": "win-win-tooling-solutions",
@@ -813,6 +815,7 @@
       }
     }
   ],
+
   "categories": [
     "PCD Solutions",
     "Carbide Tools",
@@ -824,13 +827,14 @@
     "Precision Tools",
     "Solid Carbide"
   ],
+
   "brands": [
     {
       "name": "Win Win Tooling Solutions",
       "slug": "win-win-tooling-solutions",
       "logo": "/assets/winwinTool1.png",
       "description": "Premium PCD and solid carbide solutions",
-      "productCount": 4
+      "productCount": 9
     },
     {
       "name": "Palbit",
@@ -838,69 +842,6 @@
       "logo": "/assets/55HRCMillTool.png",
       "description": "World-class carbide cutting tools",
       "productCount": 3
-    },
-    {
-      "name": "HANS",
-      "slug": "hans",
-      "logo": "/assets/neckMillingTool1.png",
-      "description": "Precision micro and ball nose end mills",
-      "productCount": 2
-    },
-    {
-      "name": "MIICUT",
-      "slug": "miicut",
-      "logo": "/assets/economySeriesTool1.png",
-      "description": "High-performance end mills",
-      "productCount": 2
-    },
-    {
-      "name": "KTA",
-      "slug": "kta",
-      "logo": "/assets/winwinTool5.png",
-      "description": "Premium spindle tooling systems",
-      "productCount": 2
-    },
-    {
-      "name": "Schussler",
-      "slug": "schussler",
-      "logo": "/assets/winwinTool7.png",
-      "description": "Hydraulic tool holding solutions",
-      "productCount": 1
-    },
-    {
-      "name": "Speroni",
-      "slug": "speroni",
-      "logo": "/assets/winwinTool8.png",
-      "description": "Tool presetting and measurement",
-      "productCount": 1
-    },
-    {
-      "name": "DIJET",
-      "slug": "dijet",
-      "logo": "/assets/winwinTool9.png",
-      "description": "Indexable cutting tools",
-      "productCount": 1
-    },
-    {
-      "name": "ETP",
-      "slug": "etp",
-      "logo": "/assets/winwinTool10.png",
-      "description": "Hydraulic clamping systems",
-      "productCount": 1
-    },
-    {
-      "name": "Posithread",
-      "slug": "posithread",
-      "logo": "/assets/winwinTool11.png",
-      "description": "Threading solutions",
-      "productCount": 1
-    },
-    {
-      "name": "Emkay Tools",
-      "slug": "emkay-tools",
-      "logo": "/assets/HRC55Tool.png",
-      "description": "Precision reaming tools",
-      "productCount": 1
     }
   ]
 }
