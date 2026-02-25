@@ -130,7 +130,7 @@ export default function ProductDetail({ openQuoteModal }) {
               transition={{ duration: 0.5 }}
             >
               <div className="bg-white rounded-3xl p-8 shadow-card sticky top-28">
-                <div className="aspect-square bg-gray-50 rounded-2xl overflow-hidden flex items-center justify-center">
+                <div className="aspect-square bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden flex items-center justify-center">
                   <img
   src={productImages[selectedImage]}
   alt={product.productName}
@@ -201,6 +201,28 @@ export default function ProductDetail({ openQuoteModal }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
+              {/* Series & HRC Badge Row */}
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                {product.series && (
+                  <span
+                    className="text-white text-sm font-bold px-3 py-1.5 rounded-full"
+                    style={{ backgroundColor: product.seriesColor || '#1e3a5f' }}
+                  >
+                    {product.series} SERIES
+                  </span>
+                )}
+                {product.hrc && (
+                  <span className="bg-gray-900 text-white text-sm font-bold px-3 py-1.5 rounded-full">
+                    HRC {product.hrc}
+                  </span>
+                )}
+                {product.productCode && (
+                  <span className="bg-gray-200 text-gray-800 text-sm font-mono font-bold px-3 py-1.5 rounded-full">
+                    {product.productCode}
+                  </span>
+                )}
+              </div>
+
               {/* Brand & Category */}
               <div className="flex items-center gap-3 mb-4">
                 <Badge variant="accent">{product.brand}</Badge>
@@ -212,10 +234,18 @@ export default function ProductDetail({ openQuoteModal }) {
                 {product.productName}
               </h1>
 
-              {/* Product Type */}
-              <p className="text-lg text-gray-600 mb-6">
-                {product.productType}
-              </p>
+              {/* Flutes & Product Type */}
+              <div className="flex items-center gap-4 mb-6">
+                {product.flutes && (
+                  <span className="text-lg font-semibold text-navy-600">
+                    {product.flutes} Flute{product.flutes > 1 ? 's' : ''}
+                  </span>
+                )}
+                <span className="text-gray-300">|</span>
+                <span className="text-lg text-gray-600">
+                  {product.productType}
+                </span>
+              </div>
 
               {/* Description */}
               <p className="text-gray-600 leading-relaxed mb-8">
@@ -344,17 +374,39 @@ export default function ProductDetail({ openQuoteModal }) {
                   to={`/products/${relatedProduct.brandSlug}/${relatedProduct.slug}`}
                   className="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all"
                 >
-                  <div className="aspect-product bg-gray-50 overflow-hidden">
+                  <div className="aspect-product bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden relative">
                     <img
                       src={relatedProduct.image}
                       alt={relatedProduct.productName}
                       className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
                     />
+                    {relatedProduct.series && (
+                      <div className="absolute top-3 left-3">
+                        <span
+                          className="text-white text-xs font-bold px-2 py-1 rounded-full"
+                          style={{ backgroundColor: relatedProduct.seriesColor || '#1e3a5f' }}
+                        >
+                          {relatedProduct.series}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-4">
-                    <p className="text-sm text-green-500 font-medium mb-1">
-                      {relatedProduct.brand}
-                    </p>
+                    <div className="flex items-center gap-2 mb-1">
+                      {relatedProduct.hrc && (
+                        <span className="text-xs font-bold text-gray-500">
+                          HRC {relatedProduct.hrc}
+                        </span>
+                      )}
+                      {relatedProduct.flutes && (
+                        <>
+                          <span className="text-gray-300">•</span>
+                          <span className="text-xs text-gray-500">
+                            {relatedProduct.flutes}F
+                          </span>
+                        </>
+                      )}
+                    </div>
                     <h3 className="font-semibold text-gray-900 group-hover:text-navy-500 transition-colors line-clamp-2">
                       {relatedProduct.productName}
                     </h3>
