@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Package } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Badge from '../ui/Badge'
 
 export default function ProductCard({ product, index = 0 }) {
@@ -9,10 +9,11 @@ export default function ProductCard({ product, index = 0 }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
+      className="h-full flex"
     >
       <Link
         to={`/products/${product.brandSlug}/${product.slug}`}
-        className="group block bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+        className="group flex flex-col w-full bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
       >
         {/* Image */}
         <div className="relative aspect-product bg-gray-50 overflow-hidden">
@@ -23,35 +24,29 @@ export default function ProductCard({ product, index = 0 }) {
             loading="lazy"
           />
 
-          {/* Category badge */}
           <div className="absolute top-4 left-4">
             <Badge variant="navy" size="sm">
               {product.category}
             </Badge>
           </div>
 
-          {/* Hover overlay */}
           <div className="absolute inset-0 bg-navy-500/0 group-hover:bg-navy-500/10 transition-colors duration-300" />
         </div>
 
         {/* Content */}
-        <div className="p-5">
-          {/* Brand */}
+        <div className="p-5 flex flex-col flex-1">
           <p className="text-sm text-green-500 font-medium mb-1">
             {product.brand}
           </p>
 
-          {/* Title */}
           <h3 className="text-lg font-semibold text-gray-900 group-hover:text-navy-500 transition-colors mb-2 line-clamp-2">
             {product.productName}
           </h3>
 
-          {/* Product Type */}
           <p className="text-sm text-gray-500 mb-3">
             {product.productType}
           </p>
 
-          {/* Features */}
           {product.features && product.features.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-4">
               {product.features.slice(0, 2).map((feature) => (
@@ -65,8 +60,8 @@ export default function ProductCard({ product, index = 0 }) {
             </div>
           )}
 
-          {/* CTA */}
-          <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+          {/* Spacer pushes CTA to bottom */}
+          <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between">
             <span className="text-sm text-gray-500">
               {product.materialCompatibility}
             </span>

@@ -1,6 +1,6 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
-import { motion } from 'framer-motion'
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   ChevronRight,
@@ -10,46 +10,58 @@ import {
   Package,
   Shield,
   Truck,
-} from 'lucide-react'
-import Button from '../components/ui/Button'
-import Badge from '../components/ui/Badge'
-import Card from '../components/ui/Card'
-import productsData from '../data/products.json'
+} from "lucide-react";
+import { useState } from "react";
+import Button from "../components/ui/Button";
+import Badge from "../components/ui/Badge";
+import Card from "../components/ui/Card";
+import productsData from "../data/products.json";
 
 export default function ProductDetail({ openQuoteModal }) {
-  const { brand, slug } = useParams()
-  const navigate = useNavigate()
+  const { brand, slug } = useParams();
+  const navigate = useNavigate();
 
   const product = productsData.products.find(
-    (p) => p.brandSlug === brand && p.slug === slug
-  )
+    (p) => p.brandSlug === brand && p.slug === slug,
+  );
 
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            Product Not Found
+          </h1>
           <Link to="/products" className="text-green-500 hover:underline">
             Browse all products
           </Link>
         </div>
       </div>
-    )
+    );
   }
+
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [thumbStartIndex, setThumbStartIndex] = useState(0);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false)
+
+  // Combine main image + extra images safely
+  const productImages = [product.image, ...(product.images || [])];
 
   // Get related products
   const relatedProducts = productsData.products
     .filter(
       (p) =>
         p.id !== product.id &&
-        (p.category === product.category || p.brandSlug === product.brandSlug)
+        (p.category === product.category || p.brandSlug === product.brandSlug),
     )
-    .slice(0, 4)
+    .slice(0, 4);
 
   return (
     <>
       <Helmet>
-        <title>{product.productName} - {product.brand} | Win Win Tooling Solutions</title>
+        <title>
+          {product.productName} - {product.brand} | Win Win Tooling Solutions
+        </title>
         <meta name="description" content={product.description} />
         <link
           rel="canonical"
@@ -61,14 +73,14 @@ export default function ProductDetail({ openQuoteModal }) {
           {JSON.stringify({
             "@context": "https://schema.org/",
             "@type": "Product",
-            "name": product.productName,
-            "description": product.description,
-            "brand": {
+            name: product.productName,
+            description: product.description,
+            brand: {
               "@type": "Brand",
-              "name": product.brand
+              name: product.brand,
             },
-            "category": product.category,
-            "image": `https://winwintoolingsolutions.in${product.image}`
+            category: product.category,
+            image: `https://winwintoolingsolutions.in${product.image}`,
           })}
         </script>
       </Helmet>
@@ -77,15 +89,24 @@ export default function ProductDetail({ openQuoteModal }) {
       <div className="bg-gray-50 py-4">
         <div className="container-custom">
           <nav className="flex items-center text-sm text-gray-600">
-            <Link to="/" className="hover:text-navy-500">Home</Link>
+            <Link to="/" className="hover:text-navy-500">
+              Home
+            </Link>
             <ChevronRight className="w-4 h-4 mx-2" />
-            <Link to="/products" className="hover:text-navy-500">Products</Link>
+            <Link to="/products" className="hover:text-navy-500">
+              Products
+            </Link>
             <ChevronRight className="w-4 h-4 mx-2" />
-            <Link to={`/products?brand=${brand}`} className="hover:text-navy-500">
+            <Link
+              to={`/products?brand=${brand}`}
+              className="hover:text-navy-500"
+            >
               {product.brand}
             </Link>
             <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-gray-900 font-medium">{product.productName}</span>
+            <span className="text-gray-900 font-medium">
+              {product.productName}
+            </span>
           </nav>
         </div>
       </div>
@@ -111,11 +132,66 @@ export default function ProductDetail({ openQuoteModal }) {
               <div className="bg-white rounded-3xl p-8 shadow-card sticky top-28">
                 <div className="aspect-square bg-gray-50 rounded-2xl overflow-hidden flex items-center justify-center">
                   <img
-                    src={product.image}
-                    alt={product.productName}
-                    className="max-w-full max-h-full object-contain p-8"
-                  />
+  src={productImages[selectedImage]}
+  alt={product.productName}
+  onClick={() => setIsPreviewOpen(true)}
+  className="max-w-full max-h-full object-contain p-8 cursor-pointer"
+/>
                 </div>
+
+                {/* Thumbnail Section */}
+                {productImages.length > 1 && (
+                  <div className="flex items-center justify-center gap-4 mt-6">
+                    {/* Left Arrow - Scroll Thumbnails */}
+                    <button
+                      onClick={() =>
+                        setThumbStartIndex((prev) => (prev > 0 ? prev - 1 : 0))
+                      }
+                      className="bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
+                    >
+                      ‹
+                    </button>
+
+                    {/* Visible Thumbnails (4 at a time) */}
+                    <div className="flex gap-4">
+                      {productImages
+                        .slice(thumbStartIndex, thumbStartIndex + 4)
+                        .map((img, index) => {
+                          const actualIndex = thumbStartIndex + index;
+
+                          return (
+                            <img
+                              key={actualIndex}
+                              src={img}
+                              alt="thumb"
+                              onMouseEnter={() => setSelectedImage(actualIndex)}
+                              onClick={() => {
+   
+  setIsPreviewOpen(true)
+}}
+                              className={`w-20 h-20 object-contain bg-gray-50 rounded-lg cursor-pointer border-2 transition ${
+                                selectedImage === actualIndex
+                                  ? "border-green-500"
+                                  : "border-gray-200"
+                              }`}
+                            />
+                          );
+                        })}
+                    </div>
+
+                    {/* Right Arrow - Scroll Thumbnails */}
+                    <button
+                      onClick={() =>
+                        setThumbStartIndex((prev) =>
+                          prev + 4 < productImages.length ? prev + 1 : prev,
+                        )
+                      }
+                      className="bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
+                    >
+                      ›
+                    </button>
+                  </div>
+                )}
               </div>
             </motion.div>
 
@@ -176,7 +252,9 @@ export default function ProductDetail({ openQuoteModal }) {
                           ([key, value], index) => (
                             <tr
                               key={key}
-                              className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
+                              className={
+                                index % 2 === 0 ? "bg-white" : "bg-gray-50"
+                              }
                             >
                               <td className="px-4 py-3 text-sm font-medium text-gray-700 w-1/3">
                                 {key}
@@ -185,7 +263,7 @@ export default function ProductDetail({ openQuoteModal }) {
                                 {value}
                               </td>
                             </tr>
-                          )
+                          ),
                         )}
                       </tbody>
                     </table>
@@ -199,7 +277,7 @@ export default function ProductDetail({ openQuoteModal }) {
                   Material Compatibility
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {product.materialCompatibility.split('/').map((material) => (
+                  {product.materialCompatibility.split("/").map((material) => (
                     <Badge key={material} variant="gray" size="lg">
                       {material.trim()}
                     </Badge>
@@ -287,6 +365,75 @@ export default function ProductDetail({ openQuoteModal }) {
           </div>
         </section>
       )}
+      {isPreviewOpen && (
+  <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+    <div className="bg-white w-[95%] h-[90vh] rounded-xl flex relative overflow-hidden">
+
+      {/* Close Button */}
+      <button
+        onClick={() => setIsPreviewOpen(false)}
+        className="absolute top-4 right-4 bg-gray-200 px-3 py-1 rounded-full"
+      >
+        ✕ Close
+      </button>
+
+      {/* LEFT - Vertical Thumbnails */}
+      <div className="w-24 bg-gray-100 flex flex-col items-center gap-4 p-4 overflow-y-auto min-h-0">
+        {productImages.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            onMouseEnter={() => setSelectedImage(index)}
+            className={`w-16 h-16 object-contain cursor-pointer border-2 rounded ${
+              selectedImage === index
+                ? "border-green-500"
+                : "border-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* CENTER - Main Image */}
+      <div className="flex-1 flex items-center justify-center bg-gray-200">
+        <img
+          src={productImages[selectedImage]}
+          className="max-h-[80%] object-contain"
+        />
+      </div>
+
+      {/* RIGHT - Product Content (SAME DATA) */}
+      <div className="w-[35%] p-8 overflow-y-auto">
+        <h2 className="text-2xl font-bold mb-4">
+          {product.productName}
+        </h2>
+
+        <p className="text-lg font-semibold mb-4">
+          Brand: {product.brand}
+        </p>
+
+        <p className="mb-4 text-gray-600">
+          {product.description}
+        </p>
+
+        {product.specifications && (
+          <div>
+            <h3 className="font-semibold mb-3">Specifications</h3>
+            <ul className="space-y-2">
+              {Object.entries(product.specifications).map(
+                ([key, value]) => (
+                  <li key={key} className="text-sm">
+                    <strong>{key}:</strong> {value}
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+)}
     </>
-  )
+  );
 }
