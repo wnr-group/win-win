@@ -1,0 +1,9 @@
+Task:
+In src/data/products.json,
+replace all occurrences of "/public/assets/" with "/assets/".
+
+Rules:
+- Do not modify any other fields
+- Do not change JSON structure
+- Do not rename files
+- Only fix incorrect public directory references
