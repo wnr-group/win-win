@@ -1,21 +1,32 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Package } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Badge from '../ui/Badge'
 
+// Series color mapping for badges
+const seriesColors = {
+  PRIME: { bg: 'bg-green-500', text: 'text-white' },
+  ECONOMY: { bg: 'bg-orange-500', text: 'text-white' },
+  PREMIUM: { bg: 'bg-red-500', text: 'text-white' },
+  ALU: { bg: 'bg-blue-500', text: 'text-white' },
+}
+
 export default function ProductCard({ product, index = 0 }) {
+  const seriesStyle = seriesColors[product.series] || { bg: 'bg-navy-500', text: 'text-white' }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
+      className="h-full flex"
     >
       <Link
         to={`/products/${product.brandSlug}/${product.slug}`}
-        className="group block bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+        className="group flex flex-col w-full bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
       >
         {/* Image */}
-        <div className="relative aspect-product bg-gray-50 overflow-hidden">
+        <div className="relative aspect-product bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
           <img
             src={product.image}
             alt={product.productName}
@@ -23,35 +34,49 @@ export default function ProductCard({ product, index = 0 }) {
             loading="lazy"
           />
 
-          {/* Category badge */}
-          <div className="absolute top-4 left-4">
-            <Badge variant="navy" size="sm">
-              {product.category}
-            </Badge>
+          {/* Series Badge */}
+          <div className="absolute top-4 left-4 flex gap-2">
+            <span className={`${seriesStyle.bg} ${seriesStyle.text} text-xs font-bold px-2.5 py-1 rounded-full`}>
+              {product.series}
+            </span>
+            {product.hrc && (
+              <span className="bg-gray-900/80 text-white text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                HRC {product.hrc}
+              </span>
+            )}
           </div>
 
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-navy-500/0 group-hover:bg-navy-500/10 transition-colors duration-300" />
+          {/* Product Code */}
+          {product.productCode && (
+            <div className="absolute bottom-4 right-4">
+              <span className="bg-white/90 text-gray-900 text-xs font-mono font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">
+                {product.productCode}
+              </span>
+            </div>
+          )}
+
+          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300" />
         </div>
 
         {/* Content */}
-        <div className="p-5">
-          {/* Brand */}
-          <p className="text-sm text-green-500 font-medium mb-1">
-            {product.brand}
-          </p>
+        <div className="p-5 flex flex-col flex-1">
+          {/* Flutes indicator */}
+          {product.flutes && (
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
+                {product.flutes} Flute{product.flutes > 1 ? 's' : ''}
+              </span>
+              <span className="text-gray-300">•</span>
+              <span className="text-xs text-gray-400">
+                {product.productType}
+              </span>
+            </div>
+          )}
 
-          {/* Title */}
           <h3 className="text-lg font-semibold text-gray-900 group-hover:text-navy-500 transition-colors mb-2 line-clamp-2">
             {product.productName}
           </h3>
 
-          {/* Product Type */}
-          <p className="text-sm text-gray-500 mb-3">
-            {product.productType}
-          </p>
-
-          {/* Features */}
           {product.features && product.features.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-4">
               {product.features.slice(0, 2).map((feature) => (
@@ -65,12 +90,12 @@ export default function ProductCard({ product, index = 0 }) {
             </div>
           )}
 
-          {/* CTA */}
-          <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-            <span className="text-sm text-gray-500">
-              {product.materialCompatibility}
+          {/* Spacer pushes CTA to bottom */}
+          <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between">
+            <span className="text-sm text-gray-500 truncate max-w-[60%]">
+              {product.application}
             </span>
-            <span className="flex items-center text-sm font-medium text-navy-500 group-hover:text-green-500 transition-colors">
+            <span className="flex items-center text-sm font-medium text-navy-500 group-hover:text-green-500 transition-colors whitespace-nowrap">
               View Details
               <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </span>
