@@ -7,6 +7,8 @@ import ProductCard from '../components/products/ProductCard'
 import ProductFilter from '../components/products/ProductFilter'
 import Input from '../components/ui/Input'
 import productsData from '../data/products.json'
+import PalbitBrandInfo from '../components/products/PalbitBrandInfo'
+
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -16,6 +18,7 @@ export default function Products() {
 
   const selectedCategory = searchParams.get('category') || ''
   const selectedBrand = searchParams.get('brand') || ''
+  const isPalbit = selectedBrand === 'palbit'
 
   const { products, categories, brands } = productsData
 
@@ -28,7 +31,7 @@ export default function Products() {
       }
 
       // Brand filter
-      if (selectedBrand && product.brandSlug !== selectedBrand) {
+      if (selectedBrand && selectedBrand !== 'palbit' && product.brandSlug !== selectedBrand) {
         return false
       }
 
@@ -148,6 +151,7 @@ export default function Products() {
             {/* Main Content */}
             <div className="flex-1">
               {/* Search & Controls */}
+             {!isPalbit&&( 
               <div className="bg-white rounded-2xl p-4 shadow-card mb-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   {/* Search */}
@@ -177,8 +181,8 @@ export default function Products() {
                         onClick={() => setGridCols(2)}
                         className={`p-2.5 ${
                           gridCols === 2
-                            ? 'bg-navy-500 text-white'
-                            : 'text-gray-500 hover:bg-gray-50'
+                            ? "bg-navy-500 text-white"
+                            : "text-gray-500 hover:bg-gray-50"
                         }`}
                       >
                         <Grid3X3 className="w-5 h-5" />
@@ -187,8 +191,8 @@ export default function Products() {
                         onClick={() => setGridCols(3)}
                         className={`p-2.5 ${
                           gridCols === 3
-                            ? 'bg-navy-500 text-white'
-                            : 'text-gray-500 hover:bg-gray-50'
+                            ? "bg-navy-500 text-white"
+                            : "text-gray-500 hover:bg-gray-50"
                         }`}
                       >
                         <LayoutGrid className="w-5 h-5" />
@@ -200,19 +204,25 @@ export default function Products() {
                 {/* Results count */}
                 <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
                   <p className="text-sm text-gray-600">
-                    Showing <span className="font-semibold">{filteredProducts.length}</span>{' '}
-                    {filteredProducts.length === 1 ? 'product' : 'products'}
+                    Showing{" "}
+                    <span className="font-semibold">
+                      {filteredProducts.length}
+                    </span>{" "}
+                    {filteredProducts.length === 1 ? "product" : "products"}
                   </p>
                 </div>
               </div>
+             )}
 
               {/* Products Grid */}
-              {filteredProducts.length > 0 ? (
+              {isPalbit ? (
+                <PalbitBrandInfo />
+              ) : filteredProducts.length > 0 ? (
                 <div
                   className={`grid gap-6 ${
                     gridCols === 2
-                      ? 'grid-cols-1 sm:grid-cols-2'
-                      : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                      ? "grid-cols-1 sm:grid-cols-2"
+                      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                   }`}
                 >
                   {filteredProducts.map((product, index) => (
@@ -251,5 +261,5 @@ export default function Products() {
         </div>
       </section>
     </>
-  )
+  );
 }
