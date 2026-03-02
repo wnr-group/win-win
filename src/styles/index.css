@@ -108,6 +108,10 @@
   .link-underline:hover::after {
     @apply w-full;
   }
+
+  .sister-company {
+    @apply mt-8 p-6 bg-gray-100 rounded-2xl border-l-4 border-green-500;
+ }
 }
 
 /* Custom utilities */
