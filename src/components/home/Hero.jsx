@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle } from 'lucide-react'
-import Button from '../ui/Button'
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import Button from "../ui/Button";
 
 const features = [
-  'Premium International Brands',
-  'Custom Tooling Solutions',
-  'Technical Support',
-]
+  "Premium International Brands",
+  "Custom Tooling Solutions",
+  "Technical Support",
+];
 
 const stats = [
-  { value: '12+', label: 'Global Brands', sublabel: 'World-class partners' },
-  { value: '15+', label: 'Years Experience', sublabel: 'Industry expertise' },
-  { value: '500+', label: 'Happy Clients', sublabel: 'Across India' },
-]
+  { value: "12+", label: "Global Brands", sublabel: "World-class partners" },
+  { value: "15+", label: "Years Experience", sublabel: "Industry expertise" },
+  { value: "500+", label: "Happy Clients", sublabel: "Across India" },
+];
 
 export default function Hero({ openQuoteModal }) {
   return (
@@ -49,7 +49,7 @@ export default function Hero({ openQuoteModal }) {
           >
             Premium Industrial
             <br />
-            <span className="text-gradient bg-gradient-to-r from-green-400 to-green-500">
+            <span className="text-white font-extrabold px-3 py-1 rounded-lg bg-white/5 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
               Tooling Solutions
             </span>
           </motion.h1>
@@ -60,8 +60,9 @@ export default function Hero({ openQuoteModal }) {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed"
           >
-            Your trusted partner for world-class cutting tools, precision equipment,
-            and custom machining solutions. Quality you can rely on, delivered on time.
+            Your trusted partner for world-class cutting tools, precision
+            equipment, and custom machining solutions. Quality you can rely on,
+            delivered on time.
           </motion.p>
 
           {/* Features */}
@@ -72,10 +73,7 @@ export default function Hero({ openQuoteModal }) {
             className="flex flex-wrap gap-4 mb-10"
           >
             {features.map((feature) => (
-              <li
-                key={feature}
-                className="flex items-center text-white"
-              >
+              <li key={feature} className="flex items-center text-white">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
                 <span className="text-sm md:text-base">{feature}</span>
               </li>
@@ -99,11 +97,7 @@ export default function Hero({ openQuoteModal }) {
                 Explore Products
               </Button>
             </Link>
-            <Button
-              variant="outline-white"
-              size="lg"
-              onClick={openQuoteModal}
-            >
+            <Button variant="outline-white" size="lg" onClick={openQuoteModal}>
               Request a Quote
             </Button>
           </motion.div>
@@ -118,7 +112,9 @@ export default function Hero({ openQuoteModal }) {
         >
           {stats.map((stat, index) => (
             <div key={stat.label} className="flex items-center gap-3">
-              <span className="text-4xl font-bold text-green-400">{stat.value}</span>
+              <span className="text-4xl font-bold text-green-400">
+                {stat.value}
+              </span>
               <div className="border-l border-white/30 pl-3">
                 <p className="text-white font-medium text-sm">{stat.label}</p>
               </div>
@@ -145,5 +141,5 @@ export default function Hero({ openQuoteModal }) {
         </svg>
       </div>
     </section>
-  )
+  );
 }
