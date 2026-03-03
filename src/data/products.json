@@ -877,7 +877,46 @@
     {
     "name": "Palbit",
     "slug": "palbit",
-    "description": "Global manufacturer of high-performance cutting tools and wear parts.",
+    "type": "external",
+    "description": "Global manufacturer of high-performance cutting tools and carbide solutions.",
+    "image": "/assets/brands/palbit.svg",
+    "externalUrl": "https://www.palbit.pt/en/products/cutting",
+      "productCount": 0
+  },
+  {
+    "name": "Bilz",
+    "slug": "bilz",
+    "type": "external",
+    "description": "Leading German manufacturer of precision tool holders and tapping solutions.",
+    "image": "/assets/brands/bilz.png",
+    "externalUrl": "https://www.bilz.com/in/",
+      "productCount": 0
+  },
+  {
+    "name": "Tungaloy",
+    "slug": "tungaloy",
+    "type": "external",
+    "description": "Innovative tooling systems and metal cutting solutions worldwide.",
+    "image": "/assets/brands/tungaloy.png",
+    "externalUrl": "https://catalog.tungaloy.com/Index.aspx?lang=EN&GFSTYP=M",
+    "productCount": 0
+  },
+  {
+    "name": "ETP",
+    "slug": "etp",
+    "type": "external",
+    "description": "Hydraulic clamping systems for precision machining applications.",
+    "image": "/assets/brands/etp.png",
+    "externalUrl": "https://www.etp.se/en",
+       "productCount": 0
+  },
+  {
+    "name": "Emkay Tools",
+    "slug": "emkay-tools",
+    "type": "external",
+    "description": "Manufacturer of high-quality cutting tools and precision components.",
+    "image": "/assets/brands/emkay.jpg",
+    "externalUrl": "https://emkaytoolsltd.com",
     "productCount": 0
   }
   ]
