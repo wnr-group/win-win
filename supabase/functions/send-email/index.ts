@@ -57,6 +57,7 @@ const buildQuoteEmail = (data: Record<string, unknown>) => {
         <tr><td><strong>Email</strong></td><td>${escapeHtml(formatValue(data.email))}</td></tr>
         <tr><td><strong>Phone</strong></td><td>${escapeHtml(formatValue(data.phone))}</td></tr>
         <tr><td><strong>Company</strong></td><td>${escapeHtml(formatValue(data.company))}</td></tr>
+        <tr><td><strong>Location</strong></td><td>${escapeHtml(formatValue(data.location))}</td></tr>
         <tr><td><strong>Product of Interest</strong></td><td>${escapeHtml(formatValue(data.product))}</td></tr>
         <tr><td><strong>Quantity Required</strong></td><td>${escapeHtml(formatValue(data.quantity))}</td></tr>
         <tr><td><strong>Additional Requirements</strong></td><td>${escapeHtml(formatValue(data.message))}</td></tr>
@@ -78,6 +79,7 @@ const buildContactEmail = (data: Record<string, unknown>) => {
         <tr><td><strong>Email</strong></td><td>${escapeHtml(formatValue(data.email))}</td></tr>
         <tr><td><strong>Phone</strong></td><td>${escapeHtml(formatValue(data.phone))}</td></tr>
         <tr><td><strong>Company</strong></td><td>${escapeHtml(formatValue(data.company))}</td></tr>
+        <tr><td><strong>Location</strong></td><td>${escapeHtml(formatValue(data.location))}</td></tr>
         <tr><td><strong>Inquiry Type</strong></td><td>${escapeHtml(formatValue(data.inquiryType))}</td></tr>
         <tr><td><strong>Message</strong></td><td>${escapeHtml(formatValue(data.message))}</td></tr>
       </table>

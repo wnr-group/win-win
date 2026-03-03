@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async'
-import { motion } from 'framer-motion'
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 import {
   Target,
   Eye,
@@ -9,48 +9,51 @@ import {
   Cog,
   Shield,
   TrendingUp,
-} from 'lucide-react'
+} from "lucide-react";
 
 const stats = [
-  { value: '15+', label: 'Years Experience' },
-  { value: '500+', label: 'Happy Clients' },
-  { value: '12+', label: 'Global Brands' },
-  { value: '1000+', label: 'Products Delivered' },
-]
+  { value: "25+", label: "Years Experience" },
+  { value: "100+", label: "Happy Clients" },
+  { value: "12+", label: "Global Brands" },
+  { value: "1000+", label: "Products Delivered" },
+];
 
 const values = [
   {
     icon: Award,
-    title: 'Quality Excellence',
-    description: 'We never compromise on quality. Every product we supply meets the highest international standards.',
+    title: "Quality Excellence",
+    description:
+      "We never compromise on quality. Every product we supply meets the highest international standards.",
   },
   {
     icon: Users,
-    title: 'Customer First',
-    description: 'Your success is our success. We work closely with you to understand and meet your specific needs.',
+    title: "Customer First",
+    description:
+      "Your success is our success. We work closely with you to understand and meet your specific needs.",
   },
   {
     icon: Globe,
-    title: 'Global Standards',
-    description: 'We partner with world-leading manufacturers to bring you the best tooling solutions available.',
+    title: "Global Standards",
+    description:
+      "We partner with world-leading manufacturers to bring you the best tooling solutions available.",
   },
   {
     icon: Cog,
-    title: 'Technical Expertise',
-    description: 'Our team of engineers provides expert guidance to help you select the right tools for your applications.',
+    title: "Technical Expertise",
+    description:
+      "Our team of engineers provides expert guidance to help you select the right tools for your applications.",
   },
-]
+];
 
 const capabilities = [
-  'PCD & CBN Tool Solutions',
-  'Solid Carbide End Mills',
-  'Indexable Cutting Tools',
-  'Tool Holding Systems',
-  'Tool Presetting Equipment',
-  'Custom Tooling Solutions',
-  'Technical Consultation',
-  'After-sales Support',
-]
+  "PCD & CBN Tool Solutions",
+  "Solid Carbide End Mills",
+  "Indexable Cutting Tools",
+  "Tool Holding Systems",
+  "Tool Presetting Equipment",
+  "Custom Tooling Solutions",
+  "Technical Consultation",
+];
 
 export default function About() {
   return (
@@ -77,12 +80,12 @@ export default function About() {
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Your Trusted Partner in
-              <span className="text-green-400"> Precision Tooling</span>
+              <span className="text-green-400"> Tool Solutions</span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              For over 15 years, Win Win Tooling Solutions has been at the forefront
-              of industrial tooling, providing world-class solutions to manufacturing
-              companies across India.
+              For over 5+ years, Win Win Tooling Solutions has been at the
+              forefront of industrial tooling, providing world-class solutions
+              to manufacturing companies across India.
             </p>
           </motion.div>
         </div>
@@ -130,24 +133,42 @@ export default function About() {
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Building Excellence Through
-                <span className="text-green-500"> Partnership</span>
+                <span className="text-green-500"> Collaboration</span>
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Founded with a vision to bring world-class tooling solutions to
-                  Indian manufacturers, Win Win Tooling Solutions has grown to become
-                  a trusted name in the industry.
+                  Founded with a vision to bring world-class tooling solutions
+                  to Indian manufacturers, Win Win Tooling Solutions has grown
+                  to become a trusted name in the industry.
                 </p>
                 <p>
-                  Our journey began with a simple belief: that every manufacturer
-                  deserves access to the best tools available globally. Today, we
-                  partner with leading international brands to make this vision a reality.
+                  Our journey began with a simple belief: that every
+                  manufacturer deserves access to the best tools available
+                  globally. Today, we partner with leading international brands
+                  to make this vision a reality.
                 </p>
                 <p>
-                  We understand that in precision manufacturing, the quality of your
-                  tools directly impacts your output. That's why we go beyond just
-                  supplying products - we provide comprehensive solutions backed by
-                  technical expertise and exceptional service.
+                  We understand that in precision manufacturing, the quality of
+                  your tools directly impacts your output. That's why we go
+                  beyond just supplying products - we provide comprehensive
+                  solutions backed by technical expertise and exceptional
+                  service.
+                </p>
+              </div>
+
+              {/* Sister Company Highlight */}
+              <div className="sister-company">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full mb-3">
+                  Sister Brand
+                </span>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  WIN WIN END MILL
+                </h3>
+
+                <p className="text-gray-600 text-sm">
+                  Providing Tool Solutions and leading-edge machining solutions,
+                  delivering precision and performance to modern manufacturing.
                 </p>
               </div>
             </motion.div>
@@ -241,9 +262,9 @@ export default function About() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-8">
                 From cutting tools to tool holding systems, we offer a complete
-                range of solutions to meet your manufacturing needs. Our technical
-                team works with you to identify the right products for your specific
-                applications.
+                range of solutions to meet your manufacturing needs. Our
+                technical team works with you to identify the right products for
+                your specific applications.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {capabilities.map((capability) => (
@@ -287,7 +308,8 @@ export default function About() {
               Quality Commitment
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Uncompromising <span className="text-green-500">Quality Standards</span>
+              Committed to Excellence{" "}
+              <span className="text-green-500">Quality Standards</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Every product we supply undergoes rigorous quality checks. We work
@@ -312,5 +334,5 @@ export default function About() {
         </div>
       </section>
     </>
-  )
+  );
 }

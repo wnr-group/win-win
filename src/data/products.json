@@ -177,7 +177,7 @@
         "TiSiN coating for wear resistance",
         "Ideal for finishing operations"
       ],
-      "image": "/assets/products/economy-2f-bn.png",
+      "image": "/assets/products/economySeries2FBN.png",
       "description": "The 2F BN is a 2-flute ball nose end mill from the Economy Series. With TiSiN coating and capability up to HRC 58, it's designed for 3D contouring, finishing operations, and complex surface machining with superior surface quality.",
       "specifications": {
         "Series": "ECONOMY",
@@ -216,7 +216,7 @@
         "TiSiN coating for extended tool life",
         "Efficient material removal"
       ],
-      "image": "/assets/products/economy-4f-bn.png",
+      "image": "/assets/products/economyseries4FBN.png",
       "description": "The 4F BN is a 4-flute ball nose end mill from the Economy Series. The 4-flute design enables higher feed rates while maintaining excellent surface finish, making it ideal for semi-finishing and high-speed 3D contouring up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -255,7 +255,7 @@
         "TiSiN coating for wear resistance",
         "Reduced corner chipping"
       ],
-      "image": "/assets/products/economy-4f-rem.png",
+      "image": "/assets/products/economyseries4FSREM.png",
       "description": "The 4F REM is a 4-flute corner radius end mill from the Economy Series. The corner radius geometry reduces stress concentration and chipping, extending tool life while providing superior edge quality in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -294,7 +294,7 @@
         "TiSiN coating for durability",
         "Reduced vibration in deep cuts"
       ],
-      "image": "/assets/products/economy-4f-lnfem.png",
+      "image": "/assets/products/economySeries4FLNRFEM.png",
       "description": "The 4F LNFEM is a 4-flute long neck flat end mill from the Economy Series. The extended neck design allows access to deep ribs and pockets while maintaining rigidity, ideal for mold and die work in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -333,7 +333,7 @@
         "TiSiN coating for wear resistance",
         "Superior deep cavity finishing"
       ],
-      "image": "/assets/products/economy-2f-lnbn.png",
+      "image": "/assets/products/economyseries2FLNRBNEM.png",
       "description": "The 2F LNBN is a 2-flute long neck ball nose end mill from the Economy Series. Combining long reach with ball nose geometry, it excels in deep 3D contouring and finishing operations in molds and dies up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -373,7 +373,7 @@
         "TiSiN coating for durability",
         "Reduced corner stress in deep cuts"
       ],
-      "image": "/assets/products/economy-4f-lnrrem.png",
+      "image": "/assets/products/economyseries4FLNRREM.png",
       "description": "The 4F LNRREM is a 4-flute long neck radius end mill from the Economy Series. It combines deep reach capability with corner radius protection, ideal for deep profiling and corner radius machining in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -413,7 +413,7 @@
         "TiSiN coating for heat resistance",
         "Maximum material removal rate"
       ],
-      "image": "/assets/products/economy-4f-rougher.png",
+      "image": "/assets/products/economyseries4FEMR.png",
       "description": "The 4F Rougher is a 4-flute roughing end mill from the Economy Series. With specialized roughing geometry and chip breaker design, it delivers maximum material removal rates in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -451,7 +451,7 @@
         "Suitable for materials up to HRC 65",
         "Premium micro-grain carbide substrate"
       ],
-      "image": "/assets/products/premium-4f-fem.png",
+      "image": "/assets/products/premiumseries4FSFEM.png",
       "description": "The Premium Series 4F FEM is a 4-flute flat end mill designed for ultra-hard materials up to HRC 65. With advanced ALTiSiN coating and premium carbide substrate, it excels in demanding die and mold applications.",
       "specifications": {
         "Series": "PREMIUM",
@@ -725,7 +725,7 @@
         "Anti-adhesion coating prevents buildup",
         "Mirror surface finish capability"
       ],
-      "image": "/assets/products/alu-2ale.png",
+      "image": "/assets/products/alu-2FEMFHP.png",
       "description": "The 2ALE is a 2-flute highly polished flat end mill designed specifically for aluminum and non-ferrous metals. With 45° helix angle and mirror-polished flutes, it delivers exceptional surface finish and prevents material adhesion.",
       "specifications": {
         "Series": "ALU",
@@ -764,7 +764,7 @@
         "45° helix angle for smooth cutting",
         "Excellent chip evacuation"
       ],
-      "image": "/assets/products/alu-3ale.png",
+      "image": "/assets/products/alu-3FFEMFHP.png",
       "description": "The 3ALE is a 3-flute highly polished flat end mill for high-speed aluminum machining. The additional flute enables higher feed rates and productivity while maintaining excellent surface finish.",
       "specifications": {
         "Series": "ALU",
@@ -803,7 +803,7 @@
         "45° helix angle",
         "Mirror finish on 3D surfaces"
       ],
-      "image": "/assets/products/alu-2albn.png",
+      "image": "/assets/products/alu-2FBNEMFHP.png",
       "description": "The 2ALBN is a 2-flute highly polished ball nose end mill for 3D contouring in aluminum and non-ferrous materials. The polished surface prevents adhesion while delivering mirror-quality 3D finishes.",
       "specifications": {
         "Series": "ALU",
@@ -873,6 +873,51 @@
       "slug": "win-win-end-mill-solutions",
       "description": "Premium carbide end mills for precision machining",
       "productCount": 22
-    }
+    },
+    {
+    "name": "Palbit",
+    "slug": "palbit",
+    "type": "external",
+    "description": "Global manufacturer of high-performance cutting tools and carbide solutions.",
+    "image": "/assets/brands/palbit.svg",
+    "externalUrl": "https://www.palbit.pt/en/products/cutting",
+      "productCount": 0
+  },
+  {
+    "name": "Bilz",
+    "slug": "bilz",
+    "type": "external",
+    "description": "Leading German manufacturer of precision tool holders and tapping solutions.",
+    "image": "/assets/brands/bilz.png",
+    "externalUrl": "https://www.bilz.com/in/",
+      "productCount": 0
+  },
+  {
+    "name": "Tungaloy",
+    "slug": "tungaloy",
+    "type": "external",
+    "description": "Innovative tooling systems and metal cutting solutions worldwide.",
+    "image": "/assets/brands/tungaloy.png",
+    "externalUrl": "https://catalog.tungaloy.com/Index.aspx?lang=EN&GFSTYP=M",
+    "productCount": 0
+  },
+  {
+    "name": "ETP",
+    "slug": "etp",
+    "type": "external",
+    "description": "Hydraulic clamping systems for precision machining applications.",
+    "image": "/assets/brands/etp.png",
+    "externalUrl": "https://www.etp.se/en",
+       "productCount": 0
+  },
+  {
+    "name": "Emkay Tools",
+    "slug": "emkay-tools",
+    "type": "external",
+    "description": "Manufacturer of high-quality cutting tools and precision components.",
+    "image": "/assets/brands/emkay.jpg",
+    "externalUrl": "https://emkaytoolsltd.com",
+    "productCount": 0
+  }
   ]
 }
