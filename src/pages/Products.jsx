@@ -1,119 +1,112 @@
-import { useState, useEffect, useMemo } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
-import { motion } from 'framer-motion'
-import { Search, Filter, Grid3X3, LayoutGrid, Package } from 'lucide-react'
-import ProductCard from '../components/products/ProductCard'
-import ProductFilter from '../components/products/ProductFilter'
-import Input from '../components/ui/Input'
-import productsData from '../data/products.json'
+import { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { Search, Filter, Grid3X3, LayoutGrid, Package } from "lucide-react";
+import ProductCard from "../components/products/ProductCard";
+import ProductFilter from "../components/products/ProductFilter";
+import Input from "../components/ui/Input";
+import productsData from "../data/products.json";
 
-import ExternalBrandInfo from '../components/products/ExternalBrandInfo'
+import ExternalBrandInfo from "../components/products/ExternalBrandInfo";
 
 export default function Products() {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [searchQuery, setSearchQuery] = useState('')
-  const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [gridCols, setGridCols] = useState(3)
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [gridCols, setGridCols] = useState(3);
 
-  const selectedCategory = searchParams.get('category') || ''
-  const selectedBrand = searchParams.get('brand') || ''
-  const { products, categories, brands } = productsData
-  
-useEffect(() => {
-  if (!selectedBrand) return
+  const selectedCategory = searchParams.get("category") || "";
+  const selectedBrand = searchParams.get("brand") || "";
+  const { products, categories, brands } = productsData;
 
-  // scrollIntoView({ block: 'start' }) places the element flush with the top
-  // of the viewport, but the sticky header (top bar + navbar ~130px) overlaps
-  // it. Instead, we calculate the element's absolute Y position and scroll to
-  // a point ABOVE it so the full page top (including header) is visible.
-  const raf = requestAnimationFrame(() => {
-    const heroSection = document.getElementById('products-top')
-    if (!heroSection) return
+  useEffect(() => {
+    if (!selectedBrand) return;
 
-    const elementTop = heroSection.getBoundingClientRect().top + window.scrollY
-    window.scrollTo({ top: elementTop, behavior: 'smooth' })
-  })
+    const raf = requestAnimationFrame(() => {
+      const heroSection = document.getElementById("products-top");
+      if (!heroSection) return;
 
-  return () => cancelAnimationFrame(raf)
-}, [selectedBrand])
+      const elementTop =
+        heroSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementTop, behavior: "smooth" });
+    });
 
+    return () => cancelAnimationFrame(raf);
+  }, [selectedBrand]);
 
-
-const selectedBrandObj = brands.find(b => b.slug === selectedBrand)
-const isExternalBrand = selectedBrandObj?.type === 'external'
-
-  
+  const selectedBrandObj = brands.find((b) => b.slug === selectedBrand);
+  const isExternalBrand = selectedBrandObj?.type === "external";
 
   // Filter products
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       // Category filter
       if (selectedCategory && product.category !== selectedCategory) {
-        return false
+        return false;
       }
 
       // Brand filter
-     if (
-       selectedBrand &&
-       selectedBrandObj?.type !== "external" &&
-       product.brandSlug !== selectedBrand
-     ) {
-       return false;
-     }
+      if (
+        selectedBrand &&
+        selectedBrandObj?.type !== "external" &&
+        product.brandSlug !== selectedBrand
+      ) {
+        return false;
+      }
 
       // Search filter
       if (searchQuery) {
-        const query = searchQuery.toLowerCase()
+        const query = searchQuery.toLowerCase();
         return (
           product.productName.toLowerCase().includes(query) ||
           product.brand.toLowerCase().includes(query) ||
           product.category.toLowerCase().includes(query) ||
           product.productType.toLowerCase().includes(query) ||
           product.materialCompatibility.toLowerCase().includes(query)
-        )
+        );
       }
 
-      return true
-    })
-  }, [products, selectedCategory, selectedBrand, searchQuery])
+      return true;
+    });
+  }, [products, selectedCategory, selectedBrand, searchQuery]);
 
   const handleCategoryChange = (category) => {
-    const newParams = new URLSearchParams(searchParams)
+    const newParams = new URLSearchParams(searchParams);
     if (category) {
-      newParams.set('category', category)
+      newParams.set("category", category);
     } else {
-      newParams.delete('category')
+      newParams.delete("category");
     }
-    setSearchParams(newParams)
-  }
+    setSearchParams(newParams);
+  };
 
   const handleBrandChange = (brand) => {
-    const newParams = new URLSearchParams(searchParams)
+    const newParams = new URLSearchParams(searchParams);
     if (brand) {
-      newParams.set('brand', brand)
+      newParams.set("brand", brand);
     } else {
-      newParams.delete('brand')
+      newParams.delete("brand");
     }
-    setSearchParams(newParams)
-  }
+    setSearchParams(newParams);
+  };
 
   const handleClearFilters = () => {
-    setSearchParams({})
-    setSearchQuery('')
-  }
+    setSearchParams({});
+    setSearchQuery("");
+  };
 
   // Get page title based on filters
   const getPageTitle = () => {
     if (selectedBrand) {
-      const brand = brands.find((b) => b.slug === selectedBrand)
-      return brand ? `${brand.name} Products` : 'Products'
+      const brand = brands.find((b) => b.slug === selectedBrand);
+      return brand ? `${brand.name} Products` : "Products";
     }
     if (selectedCategory) {
-      return `${selectedCategory} Products`
+      return `${selectedCategory} Products`;
     }
-    return 'All Products'
-  }
+    return "All Products";
+  };
 
   return (
     <>
@@ -126,7 +119,10 @@ const isExternalBrand = selectedBrandObj?.type === 'external'
       </Helmet>
 
       {/* Hero Section */}
-      <section id="products-top" className="bg-gradient-to-br from-navy-500 to-navy-600 py-16">
+      <section
+        id="products-top"
+        className="bg-gradient-to-br from-navy-500 to-navy-600 py-16"
+      >
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -177,23 +173,24 @@ const isExternalBrand = selectedBrandObj?.type === 'external'
 
             {/* Main Content */}
             <div className="flex-1">
-              {/* Search & Controls */}
-             {!isExternalBrand && (
-              <div className="bg-white rounded-2xl p-4 shadow-card mb-6">
+              {/* Controls Section */}
+            
                 <div className="flex flex-col md:flex-row gap-4">
-                  {/* Search */}
-                  <div className="flex-1">
-                    <Input
-                      placeholder="Search products..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      icon={<Search className="w-5 h-5" />}
-                    />
-                  </div>
+                  {/* Search (hide only for external brands) */}
+                  {!isExternalBrand && (
+                    <div className="flex-1">
+                      <Input
+                        placeholder="Search products..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        icon={<Search className="w-5 h-5" />}
+                      />
+                    </div>
+                  )}
 
                   {/* Controls */}
-                  <div className="flex items-center gap-3">
-                    {/* Mobile filter button */}
+                  <div className="flex items-center gap-3 min-h-[70px]">
+                    {/* Mobile filter button (always visible) */}
                     <button
                       onClick={() => setIsFilterOpen(true)}
                       className="lg:hidden flex items-center px-4 py-3 bg-navy-500 text-white rounded-lg"
@@ -202,49 +199,53 @@ const isExternalBrand = selectedBrandObj?.type === 'external'
                       Filters
                     </button>
 
-                    {/* Grid toggle */}
-                    <div className="hidden md:flex items-center border border-gray-200 rounded-lg overflow-hidden">
-                      <button
-                        onClick={() => setGridCols(2)}
-                        className={`p-2.5 ${
-                          gridCols === 2
-                            ? "bg-navy-500 text-white"
-                            : "text-gray-500 hover:bg-gray-50"
-                        }`}
-                      >
-                        <Grid3X3 className="w-5 h-5" />
-                      </button>
-                      <button
-                        onClick={() => setGridCols(3)}
-                        className={`p-2.5 ${
-                          gridCols === 3
-                            ? "bg-navy-500 text-white"
-                            : "text-gray-500 hover:bg-gray-50"
-                        }`}
-                      >
-                        <LayoutGrid className="w-5 h-5" />
-                      </button>
-                    </div>
-                  </div>
-                 </div>
+                    {/* Grid toggle (only for normal products) */}
+                    {!isExternalBrand && (
+                      <div className="hidden md:flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                        <button
+                          onClick={() => setGridCols(2)}
+                          className={`p-2.5 ${
+                            gridCols === 2
+                              ? "bg-navy-500 text-white"
+                              : "text-gray-500 hover:bg-gray-50"
+                          }`}
+                        >
+                          <Grid3X3 className="w-5 h-5" />
+                        </button>
 
-                {/* Results count */}
-                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <p className="text-sm text-gray-600">
-                    Showing{" "}
-                   <span className="font-semibold">
-                      {filteredProducts.length}
-                    </span>{" "}
-                    {filteredProducts.length === 1 ? "product" : "products"}
-                  </p>
+                        <button
+                          onClick={() => setGridCols(3)}
+                          className={`p-2.5 ${
+                            gridCols === 3
+                              ? "bg-navy-500 text-white"
+                              : "text-gray-500 hover:bg-gray-50"
+                          }`}
+                        >
+                          <LayoutGrid className="w-5 h-5" />
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-             )}
+
+                {/* Results count only for normal products */}
+                {!isExternalBrand && (
+                  <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <p className="text-sm text-gray-600">
+                      Showing{" "}
+                      <span className="font-semibold">
+                        {filteredProducts.length}
+                      </span>{" "}
+                      {filteredProducts.length === 1 ? "product" : "products"}
+                    </p>
+                  </div>
+                )}
+              
 
               {/* Products Grid */}
-                {isExternalBrand ? (
-                  <ExternalBrandInfo brand={selectedBrandObj} />
-                ) : filteredProducts.length > 0 ? (
+              {isExternalBrand ? (
+                <ExternalBrandInfo brand={selectedBrandObj} />
+              ) : filteredProducts.length > 0 ? (
                 <div
                   className={`grid gap-6 ${
                     gridCols === 2
