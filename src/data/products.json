@@ -918,6 +918,24 @@
     "image": "/assets/brands/emkay.jpg",
     "externalUrl": "https://emkaytoolsltd.com",
     "productCount": 0
+  },
+  {
+    "name": "Blum Novotest",
+    "slug": "blum-novotest",
+    "type": "external",
+    "description": "Manufacturer of high-precision measurement and testing solutions for machine tools and automated production systems.",
+    "image": "/assets/brands/blum.svg",
+    "externalUrl": "https://www.blum-novotest.com/in/",
+    "productCount": 0
+  },
+  {
+    "name": "Speroni",
+    "slug": "speroni",
+    "type": "external",
+    "description": "Manufacturer of high-precision tool presetting and measurement systems for CNC machining and industrial production.",
+    "image": "/assets/brands/speroni.png",
+    "externalUrl": "https://speroni.info/en/",
+    "productCount": 0
   }
   ]
 }
