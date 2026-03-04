@@ -15,6 +15,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
     email: '',
     phone: '',
     company: '',
+    location: '',
     product: product?.productName || '',
     quantity: '',
     message: '',
@@ -80,7 +81,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={isSuccess ? null : 'Request a Quote'}
+      title={isSuccess ? null : "Request a Quote"}
       size="lg"
     >
       {isSuccess ? (
@@ -138,6 +139,15 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
               value={formData.company}
               onChange={handleChange}
             />
+
+            <Input
+              label="Location *"
+              name="location"
+              placeholder="City / State / Country"
+              value={formData.location}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -167,11 +177,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
           />
 
           <div className="flex justify-end space-x-3 pt-4">
-            <Button
-              type="button"
-              variant="ghost"
-              onClick={onClose}
-            >
+            <Button type="button" variant="ghost" onClick={onClose}>
               Cancel
             </Button>
             <Button
@@ -190,5 +196,5 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
         </form>
       )}
     </Modal>
-  )
+  );
 }
