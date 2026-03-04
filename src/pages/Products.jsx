@@ -8,6 +8,8 @@ import ProductFilter from '../components/products/ProductFilter'
 import Input from '../components/ui/Input'
 import productsData from '../data/products.json'
 
+import ExternalBrandInfo from '../components/products/ExternalBrandInfo'
+
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [searchQuery, setSearchQuery] = useState('')
@@ -16,8 +18,32 @@ export default function Products() {
 
   const selectedCategory = searchParams.get('category') || ''
   const selectedBrand = searchParams.get('brand') || ''
-
   const { products, categories, brands } = productsData
+  
+useEffect(() => {
+  if (!selectedBrand) return
+
+  // scrollIntoView({ block: 'start' }) places the element flush with the top
+  // of the viewport, but the sticky header (top bar + navbar ~130px) overlaps
+  // it. Instead, we calculate the element's absolute Y position and scroll to
+  // a point ABOVE it so the full page top (including header) is visible.
+  const raf = requestAnimationFrame(() => {
+    const heroSection = document.getElementById('products-top')
+    if (!heroSection) return
+
+    const elementTop = heroSection.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({ top: elementTop, behavior: 'smooth' })
+  })
+
+  return () => cancelAnimationFrame(raf)
+}, [selectedBrand])
+
+
+
+const selectedBrandObj = brands.find(b => b.slug === selectedBrand)
+const isExternalBrand = selectedBrandObj?.type === 'external'
+
+  
 
   // Filter products
   const filteredProducts = useMemo(() => {
@@ -28,9 +54,13 @@ export default function Products() {
       }
 
       // Brand filter
-      if (selectedBrand && product.brandSlug !== selectedBrand) {
-        return false
-      }
+     if (
+       selectedBrand &&
+       selectedBrandObj?.type !== "external" &&
+       product.brandSlug !== selectedBrand
+     ) {
+       return false;
+     }
 
       // Search filter
       if (searchQuery) {
@@ -96,7 +126,7 @@ export default function Products() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-navy-500 to-navy-600 py-16">
+      <section id="products-top" className="bg-gradient-to-br from-navy-500 to-navy-600 py-16">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,6 +178,7 @@ export default function Products() {
             {/* Main Content */}
             <div className="flex-1">
               {/* Search & Controls */}
+             {!isExternalBrand && (
               <div className="bg-white rounded-2xl p-4 shadow-card mb-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   {/* Search */}
@@ -177,8 +208,8 @@ export default function Products() {
                         onClick={() => setGridCols(2)}
                         className={`p-2.5 ${
                           gridCols === 2
-                            ? 'bg-navy-500 text-white'
-                            : 'text-gray-500 hover:bg-gray-50'
+                            ? "bg-navy-500 text-white"
+                            : "text-gray-500 hover:bg-gray-50"
                         }`}
                       >
                         <Grid3X3 className="w-5 h-5" />
@@ -187,32 +218,38 @@ export default function Products() {
                         onClick={() => setGridCols(3)}
                         className={`p-2.5 ${
                           gridCols === 3
-                            ? 'bg-navy-500 text-white'
-                            : 'text-gray-500 hover:bg-gray-50'
+                            ? "bg-navy-500 text-white"
+                            : "text-gray-500 hover:bg-gray-50"
                         }`}
                       >
                         <LayoutGrid className="w-5 h-5" />
                       </button>
                     </div>
                   </div>
-                </div>
+                 </div>
 
                 {/* Results count */}
                 <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
                   <p className="text-sm text-gray-600">
-                    Showing <span className="font-semibold">{filteredProducts.length}</span>{' '}
-                    {filteredProducts.length === 1 ? 'product' : 'products'}
+                    Showing{" "}
+                   <span className="font-semibold">
+                      {filteredProducts.length}
+                    </span>{" "}
+                    {filteredProducts.length === 1 ? "product" : "products"}
                   </p>
                 </div>
               </div>
+             )}
 
               {/* Products Grid */}
-              {filteredProducts.length > 0 ? (
+                {isExternalBrand ? (
+                  <ExternalBrandInfo brand={selectedBrandObj} />
+                ) : filteredProducts.length > 0 ? (
                 <div
                   className={`grid gap-6 ${
                     gridCols === 2
-                      ? 'grid-cols-1 sm:grid-cols-2'
-                      : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                      ? "grid-cols-1 sm:grid-cols-2"
+                      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                   }`}
                 >
                   {filteredProducts.map((product, index) => (
@@ -251,5 +288,5 @@ export default function Products() {
         </div>
       </section>
     </>
-  )
+  );
 }

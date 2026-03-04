@@ -44,7 +44,6 @@ const inquiryTypes = [
   { value: 'technical', label: 'Technical Inquiry' },
   { value: 'product', label: 'Product Information' },
   { value: 'partnership', label: 'Business Partnership' },
-  { value: 'support', label: 'After-sales Support' },
   { value: 'other', label: 'Other' },
 ]
 
@@ -57,6 +56,7 @@ export default function Contact({ openQuoteModal }) {
     email: '',
     phone: '',
     company: '',
+    location: '',
     inquiryType: '',
     message: '',
   })
@@ -137,8 +137,8 @@ export default function Contact({ openQuoteModal }) {
               Get in <span className="text-green-400">Touch</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Have questions about our products or need a custom solution?
-              Our team is here to help you find the perfect tooling solutions.
+              Have questions about our products or need a custom solution? Our
+              team is here to help you find the perfect tooling solutions.
             </p>
           </motion.div>
         </div>
@@ -159,11 +159,16 @@ export default function Contact({ openQuoteModal }) {
                 <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <info.icon className="w-7 h-7 text-green-500" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-3">{info.title}</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">
+                  {info.title}
+                </h3>
                 {info.details.map((detail, i) => (
                   <p key={i} className="text-gray-600 text-sm">
                     {info.link && i === 0 ? (
-                      <a href={info.link} className="hover:text-green-500 transition-colors">
+                      <a
+                        href={info.link}
+                        className="hover:text-green-500 transition-colors"
+                      >
                         {detail}
                       </a>
                     ) : (
@@ -192,7 +197,8 @@ export default function Contact({ openQuoteModal }) {
                   Send Us a Message
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we'll get back to you within 24
+                  hours.
                 </p>
 
                 {isSuccess ? (
@@ -249,6 +255,14 @@ export default function Contact({ openQuoteModal }) {
                         placeholder="Your Company"
                         value={formData.company}
                         onChange={handleChange}
+                      />
+                      <Input
+                        label="Location *"
+                        name="location"
+                        placeholder="City / State / Country"
+                        value={formData.location}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
 
@@ -314,9 +328,12 @@ export default function Contact({ openQuoteModal }) {
 
               {/* Quick Contact */}
               <div className="bg-navy-500 rounded-3xl p-8 text-white">
-                <h3 className="text-xl font-semibold mb-4">Need Immediate Help?</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Need Immediate Help?
+                </h3>
                 <p className="text-gray-300 mb-6">
-                  For urgent inquiries, reach out to us directly via phone or WhatsApp.
+                  For urgent inquiries, reach out to us directly via phone or
+                  WhatsApp.
                 </p>
                 <div className="space-y-4">
                   <a
@@ -350,15 +367,14 @@ export default function Contact({ openQuoteModal }) {
 
               {/* RFQ Banner */}
               <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-8 text-white">
-                <h3 className="text-xl font-semibold mb-2">Request for Quote</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Request for Quote
+                </h3>
                 <p className="text-green-100 mb-4">
-                  Looking for bulk orders or custom tooling solutions?
-                  Submit an RFQ and our team will prepare a detailed quotation.
+                  Looking for bulk orders or custom tooling solutions? Submit an
+                  RFQ and our team will prepare a detailed quotation.
                 </p>
-                <Button
-                  variant="outline-white"
-                  onClick={openQuoteModal}
-                >
+                <Button variant="outline-white" onClick={openQuoteModal}>
                   Submit RFQ
                 </Button>
               </div>
@@ -367,5 +383,5 @@ export default function Contact({ openQuoteModal }) {
         </div>
       </section>
     </>
-  )
+  );
 }
