@@ -10,6 +10,7 @@ import {
   Shield,
   TrendingUp,
 } from "lucide-react";
+import { siteConfig, getFullUrl } from "../utils/siteConfig";
 
 const stats = [
   { value: "25+", label: "Years Experience" },
@@ -59,12 +60,12 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Us - Win Win Tooling Solutions</title>
+        <title>About Us - {siteConfig.name}</title>
         <meta
           name="description"
-          content="Learn about Win Win Tooling Solutions - Your trusted partner for premium industrial tooling solutions with 15+ years of experience."
+          content={`Learn about ${siteConfig.name} - Your trusted partner for premium industrial tooling solutions with 15+ years of experience.`}
         />
-        <link rel="canonical" href="https://winwintoolingsolutions.in/about" />
+        <link rel="canonical" href={getFullUrl('/about')} />
       </Helmet>
 
       {/* Hero Section */}

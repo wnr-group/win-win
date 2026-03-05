@@ -13,6 +13,7 @@ import {
 import Button from '../components/ui/Button'
 import Input, { Textarea, Select } from '../components/ui/Input'
 import { supabase } from '../utils/supabase'
+import { siteConfig, getFullUrl } from '../utils/siteConfig'
 
 const contactInfo = [
   {
@@ -118,12 +119,12 @@ export default function Contact({ openQuoteModal }) {
   return (
     <>
       <Helmet>
-        <title>Contact Us - Win Win Tooling Solutions</title>
+        <title>Contact Us - {siteConfig.name}</title>
         <meta
           name="description"
-          content="Get in touch with Win Win Tooling Solutions. Contact us for product inquiries, quotes, technical support, and partnership opportunities."
+          content={`Get in touch with ${siteConfig.name}. Contact us for product inquiries, quotes, technical support, and partnership opportunities.`}
         />
-        <link rel="canonical" href="https://winwintoolingsolutions.in/contact" />
+        <link rel="canonical" href={getFullUrl('/contact')} />
       </Helmet>
 
       {/* Hero Section */}
