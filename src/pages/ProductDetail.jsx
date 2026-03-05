@@ -56,7 +56,7 @@ export default function ProductDetail({ openQuoteModal }) {
           href={`https://winwintoolingsolutions.in/products/${brand}/${slug}`}
         />
 
-        {/* Structured Data */}
+        {/* Product Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org/",
@@ -69,6 +69,39 @@ export default function ProductDetail({ openQuoteModal }) {
             },
             "category": product.category,
             "image": `https://winwintoolingsolutions.in${product.image}`
+          })}
+        </script>
+
+        {/* BreadcrumbList Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://winwintoolingsolutions.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Products",
+                "item": "https://winwintoolingsolutions.in/products"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": product.brand,
+                "item": `https://winwintoolingsolutions.in/products?brand=${brand}`
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": product.productName
+              }
+            ]
           })}
         </script>
       </Helmet>

@@ -61,6 +61,7 @@ export default function About() {
           name="description"
           content="Learn about Win Win Tooling Solutions - Your trusted partner for premium industrial tooling solutions with 15+ years of experience."
         />
+        <link rel="canonical" href="https://winwintoolingsolutions.in/about" />
       </Helmet>
 
       {/* Hero Section */}

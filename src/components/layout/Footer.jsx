@@ -33,6 +33,9 @@ const footerLinks = {
     { name: 'Contact', href: '/contact' },
     { name: 'Request Quote', href: '/contact' },
   ],
+  resources: [
+    { name: 'IMTMA', href: 'https://www.imtma.in/', external: true },
+  ],
 }
 
 const socialLinks = [
@@ -48,7 +51,7 @@ export default function Footer() {
     <footer className="bg-navy-500 text-white">
       {/* Main Footer */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-6">
@@ -106,6 +109,40 @@ export default function Footer() {
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {link.name}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company & Resources */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Company</h4>
+            <ul className="space-y-3 mb-6">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
+                  >
+                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-lg font-semibold mb-4">Industry Resources</h4>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
+                  >
+                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    {link.name}
+                  </a>
                 </li>
               ))}
             </ul>
