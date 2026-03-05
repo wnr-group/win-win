@@ -946,6 +946,36 @@
     "assets/brandimg/emkaytool2.png",
     "assets/brandimg/emkaytool3.png"
   ]
+  },
+  {
+    "name": "Blum Novotest",
+    "slug": "blum-novotest",
+    "type": "external",
+    "description": "Manufacturer of high-precision measurement and testing solutions for machine tools and automated production systems.",
+    "image": "/assets/brands/blum.svg",
+    "externalUrl": "https://www.blum-novotest.com/in/",
+    "productCount": 0,
+    "carouselImages": [
+    "assets/brandimg/Blum-tool-bg.webp",
+    "assets/brandimg/blum-tool-bg1.webp",
+    "assets/brandimg/blum-tool-bg2.webp"
+  ]
+  },
+  {
+    "name": "Speroni",
+    "slug": "speroni",
+    "type": "external",
+    "description": "Manufacturer of high-precision tool presetting and measurement systems for CNC machining and industrial production.",
+    "image": "/assets/brands/speroni.png",
+    "externalUrl": "https://speroni.info/en/",
+    "productCount": 0,
+    "carouselImages": [
+    "assets/brandimg/speroni-tool-bg.png",
+    "assets/brandimg/speroni-tool1.png",
+    "assets/brandimg/speroni-tool2.png"
+  ]
+     
+
   }
   ]
 }
