@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import Hero from '../components/home/Hero'
 import BrandSlider from '../components/home/BrandSlider'
+import ProductHighlights from '../components/home/ProductHighlights'
 import WhyChooseUs from '../components/home/WhyChooseUs'
 import Industries from '../components/home/Industries'
 import Testimonials from '../components/home/Testimonials'
@@ -101,6 +102,7 @@ export default function Home({ openQuoteModal }) {
 
       <Hero openQuoteModal={openQuoteModal} />
       <BrandSlider />
+      <ProductHighlights />
       <WhyChooseUs />
       <Industries />
       <Testimonials />
