@@ -1,10 +1,48 @@
+import { useState, useEffect } from "react"
+
 export default function ExternalBrandInfo({ brand }) {
-  if (!brand) return null;
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  if (!brand) return null
+
+  const images = brand.carouselImages || []
+
+  // Next image
+  const nextSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    )
+  }
+
+  // Previous image
+  const prevSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    )
+  }
+
+  // Automatic image change
+  useEffect(() => {
+    if (!images.length) return
+
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [images, currentIndex])
+
+  // Reset index when brand changes
+  useEffect(() => {
+    setCurrentIndex(0)
+  }, [brand])
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-card">
+
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        
+
         {/* Brand Image */}
         <div className="flex justify-center">
           <img
@@ -33,7 +71,66 @@ export default function ExternalBrandInfo({ brand }) {
             Explore More Products →
           </a>
         </div>
+
       </div>
+
+      {/* IMAGE CAROUSEL */}
+      {images.length > 0 && (
+        <div className="mt-10">
+
+          {/* Main Image */}
+         <div className="relative bg-gray-50 rounded-xl p-8 flex items-center justify-center min-h-[280px] border border-gray-100 shadow-sm">
+
+  <img
+    src={images[currentIndex]}
+    alt="product"
+    className="max-h-[220px] w-full object-contain transition-all duration-500 hover:scale-105"
+  />
+
+            {/* Prev */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-3 top-1/2 -translate-y-1/2 bg-white shadow-md px-3 py-2 rounded-full hover:bg-gray-100"
+            >
+              ◀
+            </button>
+
+            {/* Next */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-3 top-1/2 -translate-y-1/2 bg-white shadow-md px-3 py-2 rounded-full hover:bg-gray-100"
+            >
+              ▶
+            </button>
+
+          </div>
+
+          {/* Thumbnail Images */}
+          <div className="flex justify-center gap-3 mt-4 flex-wrap">
+
+            {images.map((img, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`border rounded-lg p-2 transition ${
+                  currentIndex === index
+                    ? "border-navy-500"
+                    : "border-gray-200 hover:border-gray-400"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt="thumbnail"
+                  className="h-14 w-14 object-contain"
+                />
+              </button>
+            ))}
+
+          </div>
+
+        </div>
+      )}
+
     </div>
-  );
+  )
 }

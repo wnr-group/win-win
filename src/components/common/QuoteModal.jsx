@@ -15,6 +15,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
     email: '',
     phone: '',
     company: '',
+    designation: '',
     location: '',
     product: product?.productName || '',
     quantity: '',
@@ -54,6 +55,8 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
           email: '',
           phone: '',
           company: '',
+          designation: '',
+          location: '',
           product: '',
           quantity: '',
           message: '',
@@ -137,6 +140,13 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
               name="company"
               placeholder="Your Company"
               value={formData.company}
+              onChange={handleChange}
+            />
+            <Input
+              label="Designation"
+              name="designation"
+              placeholder="Your Designation"
+              value={formData.designation}
               onChange={handleChange}
             />
 

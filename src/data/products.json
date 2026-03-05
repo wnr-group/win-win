@@ -881,7 +881,14 @@
     "description": "Global manufacturer of high-performance cutting tools and carbide solutions.",
     "image": "/assets/brands/palbit.svg",
     "externalUrl": "https://www.palbit.pt/en/products/cutting",
-      "productCount": 0
+      "productCount": 0,
+       "carouselImages": [
+    "/assets/brandimg/palbittool.jpg",
+    "/assets/brandimg/palbittool2.jpg",
+    "/assets/brandimg/palbittool3.jpg"
+
+  ]
+
   },
   {
     "name": "Bilz",
@@ -890,7 +897,12 @@
     "description": "Leading German manufacturer of precision tool holders and tapping solutions.",
     "image": "/assets/brands/bilz.png",
     "externalUrl": "https://www.bilz.com/in/",
-      "productCount": 0
+      "productCount": 0,
+        "carouselImages": [
+  "/assets/brandimg/bilztool.jpg",
+  "/assets/brandimg/bilzthermaltool.jpg",
+  "/assets/brandimg/bilztool3.jpg"
+  ]
   },
   {
     "name": "Tungaloy",
@@ -899,7 +911,13 @@
     "description": "Innovative tooling systems and metal cutting solutions worldwide.",
     "image": "/assets/brands/tungaloy.png",
     "externalUrl": "https://catalog.tungaloy.com/Index.aspx?lang=EN&GFSTYP=M",
-    "productCount": 0
+    "productCount": 0,
+      "carouselImages": [
+    "/assets/brandimg/tungaloytool.jpg",
+    "/assets/brandimg/tungaloyturning.jpg",
+    "/assets/brandimg/tungaloygrooving.jpg"
+    
+  ]
   },
   {
     "name": "ETP",
@@ -908,7 +926,12 @@
     "description": "Hydraulic clamping systems for precision machining applications.",
     "image": "/assets/brands/etp.png",
     "externalUrl": "https://www.etp.se/en",
-       "productCount": 0
+       "productCount": 0,
+         "carouselImages": [
+    "/assets/brandimg/etpcnc.jpg",
+    "/assets/brandimg/etpcncturning.jpg",
+    "/assets/brandimg/etphsc.jpg"
+  ]
   },
   {
     "name": "Emkay Tools",
@@ -917,7 +940,12 @@
     "description": "Manufacturer of high-quality cutting tools and precision components.",
     "image": "/assets/brands/emkay.jpg",
     "externalUrl": "https://emkaytoolsltd.com",
-    "productCount": 0
+    "productCount": 0,
+      "carouselImages": [
+    "assets/brandimg/emkaytool1.png",
+    "assets/brandimg/emkaytool2.png",
+    "assets/brandimg/emkaytool3.png"
+  ]
   },
   {
     "name": "Blum Novotest",
@@ -926,7 +954,12 @@
     "description": "Manufacturer of high-precision measurement and testing solutions for machine tools and automated production systems.",
     "image": "/assets/brands/blum.svg",
     "externalUrl": "https://www.blum-novotest.com/in/",
-    "productCount": 0
+    "productCount": 0,
+    "carouselImages": [
+    "assets/brandimg/Blum-tool-bg.webp",
+    "assets/brandimg/blum-tool-bg1.webp",
+    "assets/brandimg/blum-tool-bg2.webp"
+  ]
   },
   {
     "name": "Speroni",
@@ -935,7 +968,14 @@
     "description": "Manufacturer of high-precision tool presetting and measurement systems for CNC machining and industrial production.",
     "image": "/assets/brands/speroni.png",
     "externalUrl": "https://speroni.info/en/",
-    "productCount": 0
+    "productCount": 0,
+    "carouselImages": [
+    "assets/brandimg/speroni-tool-bg.png",
+    "assets/brandimg/speroni-tool1.png",
+    "assets/brandimg/speroni-tool2.png"
+  ]
+     
+
   }
   ]
 }
