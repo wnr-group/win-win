@@ -16,6 +16,7 @@ import Button from "../components/ui/Button";
 import Badge from "../components/ui/Badge";
 import Card from "../components/ui/Card";
 import productsData from "../data/products.json";
+import { siteConfig, getFullUrl } from "../utils/siteConfig";
 
 export default function ProductDetail({ openQuoteModal }) {
   const { brand, slug } = useParams();
@@ -60,12 +61,12 @@ export default function ProductDetail({ openQuoteModal }) {
     <>
       <Helmet>
         <title>
-          {product.productName} - {product.brand} | Win Win Tooling Solutions
+          {product.productName} - {product.brand} | {siteConfig.name}
         </title>
         <meta name="description" content={product.description} />
         <link
           rel="canonical"
-          href={`https://winwintoolingsolutions.in/products/${brand}/${slug}`}
+          href={getFullUrl(`/products/${brand}/${slug}`)}
         />
 
         {/* Product Structured Data */}
@@ -80,7 +81,7 @@ export default function ProductDetail({ openQuoteModal }) {
               name: product.brand,
             },
             category: product.category,
-            image: `https://winwintoolingsolutions.in${product.image}`,
+            image: getFullUrl(product.image),
           })}
         </script>
 
@@ -94,19 +95,19 @@ export default function ProductDetail({ openQuoteModal }) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://winwintoolingsolutions.in/"
+                "item": getFullUrl('/')
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Products",
-                "item": "https://winwintoolingsolutions.in/products"
+                "item": getFullUrl('/products')
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": product.brand,
-                "item": `https://winwintoolingsolutions.in/products?brand=${brand}`
+                "item": getFullUrl(`/products?brand=${brand}`)
               },
               {
                 "@type": "ListItem",

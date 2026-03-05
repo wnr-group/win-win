@@ -2,8 +2,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://winwintoolingsolutions.in/sitemap.xml
+# Sitemap - Update URL when production domain is finalized
+# Sitemap: https://your-domain.com/sitemap.xml
 
 # Disallow admin or private paths (if any)
 Disallow: /api/
