@@ -116,6 +116,7 @@ export default function Products() {
           name="description"
           content={`Browse our range of ${getPageTitle().toLowerCase()}. Premium industrial tooling solutions from world-leading brands.`}
         />
+        <link rel="canonical" href="https://winwintoolingsolutions.in/products" />
       </Helmet>
 
       {/* Hero Section */}

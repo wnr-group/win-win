@@ -123,6 +123,7 @@ export default function Contact({ openQuoteModal }) {
           name="description"
           content="Get in touch with Win Win Tooling Solutions. Contact us for product inquiries, quotes, technical support, and partnership opportunities."
         />
+        <link rel="canonical" href="https://winwintoolingsolutions.in/contact" />
       </Helmet>
 
       {/* Hero Section */}

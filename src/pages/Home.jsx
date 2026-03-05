@@ -10,14 +10,14 @@ export default function Home({ openQuoteModal }) {
   return (
     <>
       <Helmet>
-        <title>Win Win Tooling Solutions - Premium Industrial Tooling & Machining Solutions</title>
+        <title>Win Win Tooling - Premium Industrial Tooling Solutions</title>
         <meta
           name="description"
           content="Win Win Tooling Solutions - Your trusted partner for world-class cutting tools, precision equipment, and custom machining solutions. PCD tools, carbide end mills, tool holders, and more."
         />
         <link rel="canonical" href="https://winwintoolingsolutions.in/" />
 
-        {/* Structured Data */}
+        {/* Organization Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -38,7 +38,43 @@ export default function Home({ openQuoteModal }) {
               "@type": "ContactPoint",
               "telephone": "+91-73387-17209",
               "contactType": "sales"
-            }
+            },
+            "sameAs": []
+          })}
+        </script>
+
+        {/* LocalBusiness Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Win Win Tooling Solutions",
+            "image": "https://winwintoolingsolutions.in/assets/winwin-logo.jpg",
+            "url": "https://winwintoolingsolutions.in",
+            "telephone": "+91-73387-17209",
+            "email": "winwintoolingsolutions@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Lenin Nagar, Ambattur",
+              "addressLocality": "Chennai",
+              "postalCode": "600053",
+              "addressRegion": "Tamil Nadu",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 13.1143,
+              "longitude": 80.1548
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "priceRange": "$$"
           })}
         </script>
       </Helmet>

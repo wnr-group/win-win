@@ -1,0 +1,9 @@
+# Robots.txt for Win Win Tooling Solutions
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://winwintoolingsolutions.in/sitemap.xml
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
