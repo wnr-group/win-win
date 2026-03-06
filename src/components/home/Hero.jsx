@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Button from "../ui/Button";
+import { useState, useEffect } from "react";
 
 const features = [
   "Premium International Brands",
@@ -15,14 +16,41 @@ const stats = [
   { value: "500+", label: "Happy Clients", sublabel: "Across India" },
 ];
 
+
 export default function Hero({ openQuoteModal }) {
+
+   const heroImages = [
+    "/assets/hero/hero-img1.png",
+    "/assets/hero/hero-img2.png",
+    "/assets/hero/hero-img3.png",
+    "/assets/hero/hero-img4.png",
+    "/assets/hero/hero-img5.png",
+    "/assets/hero/hero-img6.png"
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/assets/hero-image.jpg')" }}
-      />
+      {/* Background Image Carousel */}
+{heroImages.map((img, index) => (
+  <img
+    key={img}
+    src={img}
+    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+      index === currentImage ? "opacity-100" : "opacity-0"
+    }`}
+  />
+))}
       {/* Gradient Overlay - darker on left, transparent on right */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy-500 via-navy-500/70 to-transparent" />
 
