@@ -885,8 +885,11 @@
        "carouselImages": [
     "/assets/brandimg/palbittool.jpg",
     "/assets/brandimg/palbittool2.jpg",
-    "/assets/brandimg/palbittool3.jpg"
-
+    "/assets/brandimg/palbittool3.jpg",
+    "/assets/brandimg/palbittool4.jpg",
+    "/assets/brandimg/palbittool5.jpg",
+    "/assets/brandimg/palbittool6.jpg",
+    "/assets/brandimg/palbittool7.jpg"
   ]
 
   },
@@ -901,7 +904,11 @@
         "carouselImages": [
   "/assets/brandimg/bilztool.jpg",
   "/assets/brandimg/bilzthermaltool.jpg",
-  "/assets/brandimg/bilztool3.jpg"
+  "/assets/brandimg/bilztool3.jpg",
+  "/assets/brandimg/bilztool4.jpg",
+  "/assets/brandimg/bilztool5.jpg",
+  "/assets/brandimg/bilztool6.jpg",
+  "/assets/brandimg/bilztool7.jpg"
   ]
   },
   {
@@ -915,7 +922,11 @@
       "carouselImages": [
     "/assets/brandimg/tungaloytool.jpg",
     "/assets/brandimg/tungaloyturning.jpg",
-    "/assets/brandimg/tungaloygrooving.jpg"
+    "/assets/brandimg/tungaloygrooving.jpg",
+    "/assets/brandimg/tungaloytool4.jpg",
+    "/assets/brandimg/tungaloytool5.jpg",
+    "/assets/brandimg/tungaloytool6.jpg",
+    "/assets/brandimg/tungaloytool7.jpg"
     
   ]
   },
@@ -930,7 +941,11 @@
          "carouselImages": [
     "/assets/brandimg/etpcnc.jpg",
     "/assets/brandimg/etpcncturning.jpg",
-    "/assets/brandimg/etphsc.jpg"
+    "/assets/brandimg/etphsc.jpg",
+    "/assets/brandimg/etptool4.jpg",
+    "/assets/brandimg/etptool5.jpg",
+    "/assets/brandimg/etptool6.jpg",
+    "/assets/brandimg/etptool7.jpg"
   ]
   },
   {
@@ -943,8 +958,13 @@
     "productCount": 0,
     "carouselImages": [
     "assets/brandimg/tooflo-bg.jpg",
+    "assets/brandimg/toolflo-tool1.jpg",
     "assets/brandimg/toolflo-bg1.jpg",
-    "assets/brandimg/toolflo-bg2.jpg"
+    "assets/brandimg/toolflo-tool2.jpg",
+    "assets/brandimg/toolflo-tool3.jpg",
+    "assets/brandimg/toolflo-bg2.jpg",
+    "assets/brandimg/toolflo-tool4.jpg"
+     
   ]
   },
   {
@@ -958,7 +978,11 @@
       "carouselImages": [
     "assets/brandimg/emkaytool1.png",
     "assets/brandimg/emkaytool2.png",
-    "assets/brandimg/emkaytool3.png"
+    "assets/brandimg/emkaytool3.png",
+    "assets/brandimg/emkaytool4.png",
+    "assets/brandimg/emkaytool5.png",
+    "assets/brandimg/emkaytool6.png",
+    "assets/brandimg/emkaytool7.png"
   ]
   },
   {
@@ -971,8 +995,14 @@
     "productCount": 0,
     "carouselImages": [
     "assets/brandimg/Blum-tool-bg.webp",
+    "assets/brandimg/blum-tool-bg6.webp",
     "assets/brandimg/blum-tool-bg1.webp",
-    "assets/brandimg/blum-tool-bg2.webp"
+    "assets/brandimg/blum-tool-bg5.webp",
+    "assets/brandimg/blum-tool-bg2.webp",
+    "assets/brandimg/blum-tool-bg3.webp",
+    "assets/brandimg/blum-tool-bg4.webp"
+    
+     
   ]
   },
   {
@@ -986,7 +1016,11 @@
     "carouselImages": [
     "assets/brandimg/speroni-tool-bg.png",
     "assets/brandimg/speroni-tool1.png",
-    "assets/brandimg/speroni-tool2.png"
+    "assets/brandimg/speroni-tool2.png",
+    "assets/brandimg/speroni-tool3.png",
+    "assets/brandimg/speroni-tool4.png",
+    "assets/brandimg/speroni-tool5.png",
+    "assets/brandimg/speroni-tool6.png"
   ]
   }
   ]
