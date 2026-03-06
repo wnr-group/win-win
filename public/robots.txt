@@ -1,0 +1,9 @@
+# Robots.txt for Win Win Tooling Solutions
+User-agent: *
+Allow: /
+
+# Sitemap - Update URL when production domain is finalized
+# Sitemap: https://your-domain.com/sitemap.xml
+
+# Disallow admin or private paths (if any)
+Disallow: /api/

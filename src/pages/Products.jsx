@@ -7,8 +7,8 @@ import ProductCard from "../components/products/ProductCard";
 import ProductFilter from "../components/products/ProductFilter";
 import Input from "../components/ui/Input";
 import productsData from "../data/products.json";
-
 import ExternalBrandInfo from "../components/products/ExternalBrandInfo";
+import { siteConfig, getFullUrl } from "../utils/siteConfig";
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -111,11 +111,12 @@ export default function Products() {
   return (
     <>
       <Helmet>
-        <title>{getPageTitle()} - Win Win Tooling Solutions</title>
+        <title>{getPageTitle()} - {siteConfig.name}</title>
         <meta
           name="description"
           content={`Browse our range of ${getPageTitle().toLowerCase()}. Premium industrial tooling solutions from world-leading brands.`}
         />
+        <link rel="canonical" href={getFullUrl('/products')} />
       </Helmet>
 
       {/* Hero Section */}
