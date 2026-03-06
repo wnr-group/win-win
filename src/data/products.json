@@ -934,6 +934,20 @@
   ]
   },
   {
+    "name": "Toolflo",
+    "slug": "toolflo",
+    "type": "external",
+    "description": "Leading manufacturer of indexable carbide cutting tools specializing in grooving, turning, threading, and boring solutions for precision machining applications.",
+    "image": "/assets/brands/toolflo.png",
+    "externalUrl": "https://webshop.toolflo.com/",
+    "productCount": 0,
+    "carouselImages": [
+    "assets/brandimg/tooflo-bg.jpg",
+    "assets/brandimg/toolflo-bg1.jpg",
+    "assets/brandimg/toolflo-bg2.jpg"
+  ]
+  },
+  {
     "name": "Emkay Tools",
     "slug": "emkay-tools",
     "type": "external",
@@ -974,8 +988,6 @@
     "assets/brandimg/speroni-tool1.png",
     "assets/brandimg/speroni-tool2.png"
   ]
-     
-
   }
   ]
 }

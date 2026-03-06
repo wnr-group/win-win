@@ -46,6 +46,7 @@ const brands = [
     logo: '/assets/brands/speroni.png',
     url: 'https://speroni.info/en/',
   },
+  
 ]
 
 export default function BrandSlider() {
