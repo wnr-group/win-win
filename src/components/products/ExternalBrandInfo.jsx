@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
+import QuoteModal from "../common/QuoteModal"
 
 export default function ExternalBrandInfo({ brand }) {
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false)
 
   if (!brand) return null
 
@@ -61,15 +63,23 @@ export default function ExternalBrandInfo({ brand }) {
           <p className="text-gray-600 mb-6">
             {brand.description}
           </p>
-
-          <a
-            href={brand.externalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-navy-500 text-white rounded-lg hover:bg-navy-600 transition"
-          >
-            Explore More Products →
-          </a>
+{brand.ctaType === "quote" ? (
+  <button
+    onClick={() => setIsQuoteOpen(true)}
+    className="inline-block px-6 py-3 bg-navy-500 text-white rounded-lg hover:bg-navy-600 transition"
+  >
+    Request Quote →
+  </button>
+) : (
+  <a
+    href={brand.externalUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block px-6 py-3 bg-navy-500 text-white rounded-lg hover:bg-navy-600 transition"
+  >
+    Explore More Products →
+  </a>
+)}
         </div>
 
       </div>
@@ -131,6 +141,12 @@ export default function ExternalBrandInfo({ brand }) {
         </div>
       )}
 
+
+<QuoteModal
+  isOpen={isQuoteOpen}
+  onClose={() => setIsQuoteOpen(false)}
+  product={{ productName: brand.name }}
+/>
     </div>
   )
 }

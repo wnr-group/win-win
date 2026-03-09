@@ -147,7 +147,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
               name="designation"
               placeholder="Your Designation"
               value={formData.designation}
-              onChange={handleChange}
+               onChange={handleChange}
             />
 
             <Input

@@ -1022,6 +1022,20 @@
     "assets/brandimg/speroni-tool5.png",
     "assets/brandimg/speroni-tool6.png"
   ]
-  }
+  },
+ {
+  "name": "PCD",
+  "slug": "pcd",
+  "type": "external",
+  "description": "Polycrystalline Diamond (PCD) tooling solutions for high precision machining of non-ferrous materials.",
+  "image": "/assets/brandimg/PCD SPL.png",
+  "productCount": 0,
+  "ctaType": "quote",
+  "carouselImages": [
+    "/assets/brandimg/PCD Boring.png",
+    "/assets/brandimg/PCD Reaming.png",
+    "/assets/brandimg/PCD Solution.png"
+  ]
+}
   ]
 }
