@@ -38,9 +38,9 @@ export default function Header({ openQuoteModal }) {
               <Phone className="w-4 h-4 mr-2" />
               +91 73387 17209
             </a>
-            <a href="mailto:winwintoolingsolutions@gmail.com" className="flex items-center hover:text-green-400 transition-colors">
+            <a href="mailto:admin@win-wintoolingsolutions.com" className="flex items-center hover:text-green-400 transition-colors">
               <Mail className="w-4 h-4 mr-2" />
-              winwintoolingsolutions@gmail.com
+              admin@win-wintoolingsolutions.com
             </a>
           </div>
           <div className="text-gray-300">
@@ -154,9 +154,9 @@ export default function Header({ openQuoteModal }) {
                     <Phone className="w-4 h-4 mr-2" />
                     +91 73387 17209
                   </a>
-                  <a href="mailto:winwintoolingsolutions@gmail.com" className="flex items-center">
+                  <a href="mailto:admin@win-wintoolingsolutions.com" className="flex items-center">
                     <Mail className="w-4 h-4 mr-2" />
-                    winwintoolingsolutions@gmail.com
+                    admin@win-wintoolingsolutions.com
                   </a>
                 </div>
               </div>

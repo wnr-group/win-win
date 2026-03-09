@@ -162,13 +162,15 @@ export default function ProductFilter({
                   }`}
                 >
                   <span>{brand.name}</span>
-                  <span
-                    className={`text-xs ${
-                      selectedBrand === brand.slug ? 'text-white/80' : 'text-gray-400'
-                    }`}
-                  >
-                    ({brand.productCount})
-                  </span>
+                  {brand.productCount > 0 && (
+                    <span
+                      className={`text-xs ${
+                        selectedBrand === brand.slug ? 'text-white/80' : 'text-gray-400'
+                      }`}
+                    >
+                      ({brand.productCount})
+                    </span>
+                  )}
                 </button>
               ))}
             </motion.div>

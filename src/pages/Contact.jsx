@@ -30,8 +30,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['winwintoolingsolutions@gmail.com'],
-    link: 'mailto:winwintoolingsolutions@gmail.com',
+    details: ['admin@win-wintoolingsolutions.com'],
+    link: 'mailto:admin@win-wintoolingsolutions.com',
   },
   {
     icon: Clock,

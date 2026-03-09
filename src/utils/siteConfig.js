@@ -12,7 +12,7 @@ export const siteConfig = {
   logo: `${SITE_URL}/assets/winwin-logo.jpg`,
   contact: {
     phone: '+91-73387-17209',
-    email: 'winwintoolingsolutions@gmail.com',
+    email: 'admin@win-wintoolingsolutions.com',
     address: {
       street: 'Lenin Nagar, Ambattur',
       city: 'Chennai',

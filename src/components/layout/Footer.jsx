@@ -1,31 +1,26 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import {
   MapPin,
   Phone,
   Mail,
   Clock,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
   ArrowRight,
 } from 'lucide-react'
 
 const footerLinks = {
   products: [
-    { name: 'PCD Solutions', href: '/products?category=pcd-solutions' },
-    { name: 'Carbide Tools', href: '/products?category=carbide-tools' },
-    { name: 'End Mills', href: '/products?category=end-mills' },
-    { name: 'Tool Holders', href: '/products?category=tool-holders' },
+    { name: 'Prime Series', href: '/products?category=Prime+Series' },
+    { name: 'Economy Series', href: '/products?category=Economy+Series' },
+    { name: 'Premium Series', href: '/products?category=Premium+Series' },
+    { name: 'ALU Series', href: '/products?category=ALU+Series' },
     { name: 'All Products', href: '/products' },
   ],
   brands: [
+    { name: 'Win Win End Mill', href: '/products?brand=win-win-end-mill-solutions' },
     { name: 'Palbit', href: '/products?brand=palbit' },
-    { name: 'HANS', href: '/products?brand=hans' },
-    { name: 'MIICUT', href: '/products?brand=miicut' },
-    { name: 'KTA', href: '/products?brand=kta' },
-    { name: 'Schussler', href: '/products?brand=schussler' },
+    { name: 'Bilz', href: '/products?brand=bilz' },
+    { name: 'Tungaloy', href: '/products?brand=tungaloy' },
+    { name: 'ETP', href: '/products?brand=etp' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
@@ -33,18 +28,7 @@ const footerLinks = {
     { name: 'Contact', href: '/contact' },
     { name: 'Request Quote', href: '/contact' },
   ],
-  resources: [
-    { name: 'IMTMA', href: 'https://www.imtma.in/', external: true },
-  ],
 }
-
-const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: '#' },
-  { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'LinkedIn', icon: Linkedin, href: '#' },
-  { name: 'Instagram', icon: Instagram, href: '#' },
-  { name: 'Email', icon: Mail, href: 'mailto:winwintoolingsolutions@gmail.com' },
-]
 
 export default function Footer() {
   return (
@@ -61,21 +45,10 @@ export default function Footer() {
                 className="h-12 w-auto object-contain"
               />
             </Link>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Premium industrial tooling solutions provider, offering world-class cutting tools,
               tool holders, and precision machining equipment.
             </p>
-            <div className="flex space-x-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Products */}
@@ -117,7 +90,7 @@ export default function Footer() {
           {/* Company & Resources */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Company</h4>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -127,22 +100,6 @@ export default function Footer() {
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {link.name}
                   </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="text-lg font-semibold mb-4">Industry Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                    {link.name}
-                  </a>
                 </li>
               ))}
             </ul>
@@ -170,11 +127,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:winwintoolingsolutions@gmail.com"
-                  className="flex items-center text-gray-300 hover:text-green-400 transition-colors"
+                  href="mailto:admin@win-wintoolingsolutions.com"
+                  className="flex items-start text-gray-300 hover:text-green-400 transition-colors"
                 >
-                  <Mail className="w-5 h-5 mr-3 text-green-400" />
-                  winwintoolingsolutions@gmail.com
+                  <Mail className="w-5 h-5 mr-3 mt-0.5 text-green-400 flex-shrink-0" />
+                  <span className="break-all">admin@win-wintoolingsolutions.com</span>
                 </a>
               </li>
               <li className="flex items-start">
