@@ -74,7 +74,7 @@ export default function Footer() {
               <img
                 src="/assets/winwin-logo.jpg"
                 alt="Win Win Tooling Solutions"
-                className="h-12 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-300 leading-relaxed">
