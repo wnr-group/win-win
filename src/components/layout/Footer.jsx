@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   MapPin,
   Phone,
@@ -31,6 +31,38 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleRequestQuoteClick = (event) => {
+    event.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const scrollToProductsTop = () => {
+    const productsTop = document.getElementById('products-top')
+
+    if (productsTop) {
+      const top = productsTop.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({ top, behavior: 'smooth' })
+      return
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleProductNavigation = (href) => (event) => {
+    event.preventDefault()
+
+    if (`${location.pathname}${location.search}` !== href) {
+      navigate(href)
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToProductsTop)
+    })
+  }
+
   return (
     <footer className="bg-navy-500 text-white">
       {/* Main Footer */}
@@ -59,6 +91,15 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
+                    onClick={
+                      link.name === 'Prime Series' ||
+                      link.name === 'Economy Series' ||
+                      link.name === 'Premium Series' ||
+                      link.name === 'ALU Series' ||
+                      link.name === 'All Products'
+                        ? handleProductNavigation(link.href)
+                        : undefined
+                    }
                     className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
                   >
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
@@ -77,6 +118,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
+                    onClick={handleProductNavigation(link.href)}
                     className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
                   >
                     <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
@@ -93,13 +135,25 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                    {link.name}
-                  </Link>
+                  {link.name === 'Request Quote' ? (
+                    <button
+                      type="button"
+                      onClick={handleRequestQuoteClick}
+                      className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
+                    >
+                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      onClick={link.name === 'Our Brands' ? handleProductNavigation(link.href) : undefined}
+                      className="text-gray-300 hover:text-green-400 transition-colors flex items-center group"
+                    >
+                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

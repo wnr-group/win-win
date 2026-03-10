@@ -18,12 +18,12 @@ const stats = [
 
 
 const heroImages = [
-  "/assets/hero/hero-img1.png",
-  "/assets/hero/hero-img2.png",
-  "/assets/hero/hero-img3.png",
-  "/assets/hero/hero-img4.png",
-  "/assets/hero/hero-img5.png",
-  "/assets/hero/hero-img6.png"
+  "/assets/hero/hero-img1.webp",
+  "/assets/hero/hero-img2.webp",
+  "/assets/hero/hero-img3.webp",
+  "/assets/hero/hero-img4.webp",
+  "/assets/hero/hero-img5.webp",
+  "/assets/hero/hero-img6.webp",
 ];
 
 export default function Hero({ openQuoteModal }) {
@@ -39,17 +39,16 @@ export default function Hero({ openQuoteModal }) {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image */}
       {/* Background Image Carousel */}
-{heroImages.map((img, index) => (
-  <img
-    key={img}
-    src={img}
-    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-      index === currentImage ? "opacity-100" : "opacity-0"
-    }`}
-  />
-))}
+      {heroImages.map((img, index) => (
+        <img
+          key={img}
+          src={img}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            index === currentImage ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
       {/* Gradient Overlay - darker on left, transparent on right */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy-500 via-navy-500/70 to-transparent" />
 
