@@ -64,7 +64,7 @@ export default function Header({ openQuoteModal }) {
               <img
                 src="/assets/winwin-logo.jpg"
                 alt="Win Win Tooling Solutions"
-                className="h-12 w-auto object-contain"
+                className="h-[5rem] w-auto object-contain"
               />
             </Link>
 

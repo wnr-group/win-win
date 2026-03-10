@@ -87,7 +87,7 @@ export default function BrandSlider() {
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
                   />
                 </div>
               </a>
@@ -106,7 +106,7 @@ export default function BrandSlider() {
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
                   />
                 </div>
               </a>
