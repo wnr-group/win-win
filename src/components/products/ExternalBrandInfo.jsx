@@ -5,6 +5,7 @@ export default function ExternalBrandInfo({ brand }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isQuoteOpen, setIsQuoteOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [isBrandImageLoaded, setIsBrandImageLoaded] = useState(false)
   const [imagesLoaded, setImagesLoaded] = useState({})
 
   const images = brand?.carouselImages || []
@@ -14,6 +15,7 @@ export default function ExternalBrandInfo({ brand }) {
   useEffect(() => {
     setCurrentIndex(0)
     setIsLoading(true)
+    setIsBrandImageLoaded(false)
     setImagesLoaded({})
   }, [brand?.slug])
 
@@ -70,11 +72,20 @@ export default function ExternalBrandInfo({ brand }) {
     <div className="bg-white rounded-2xl p-8 shadow-card">
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Brand Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center min-h-[200px] items-center">
+          {!isBrandImageLoaded && (
+            <div className="flex flex-col items-center justify-center">
+              <div className="w-10 h-10 border-4 border-gray-200 border-t-navy-500 rounded-full animate-spin" />
+            </div>
+          )}
           <img
+            key={brand.slug}
             src={brand.image}
             alt={brand.name}
-            className="rounded-xl shadow-md max-h-64 object-contain"
+            className={`rounded-xl shadow-md max-h-64 object-contain transition-opacity duration-300 ${
+              isBrandImageLoaded ? "opacity-100" : "opacity-0 absolute"
+            }`}
+            onLoad={() => setIsBrandImageLoaded(true)}
           />
         </div>
 
@@ -146,29 +157,36 @@ export default function ExternalBrandInfo({ brand }) {
             </button>
           </div>
 
-          {/* Thumbnail Images */}
-          <div className="flex justify-center gap-3 mt-4 flex-wrap">
-            {images.map((img, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setIsLoading(true)
-                  setCurrentIndex(index)
-                }}
-                className={`border rounded-lg p-2 transition ${
-                  currentIndex === index
-                    ? "border-navy-500"
-                    : "border-gray-200 hover:border-gray-400"
-                }`}
-              >
-                <img
-                  src={img}
-                  alt="thumbnail"
-                  className="h-14 w-14 object-contain"
-                />
-              </button>
-            ))}
-          </div>
+          {/* Thumbnail Images - only show when not loading */}
+          {!isLoading && (
+            <div className="flex justify-center gap-3 mt-4 flex-wrap">
+              {images.map((img, index) => (
+                <button
+                  key={`${brand.slug}-thumb-${index}`}
+                  onClick={() => {
+                    setIsLoading(true)
+                    setCurrentIndex(index)
+                  }}
+                  className={`border rounded-lg p-2 transition ${
+                    currentIndex === index
+                      ? "border-navy-500"
+                      : "border-gray-200 hover:border-gray-400"
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt="thumbnail"
+                    className="h-14 w-14 object-contain"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
+          {isLoading && (
+            <div className="flex justify-center gap-3 mt-4">
+              <p className="text-gray-400 text-sm">Loading thumbnails...</p>
+            </div>
+          )}
         </div>
       )}
 
