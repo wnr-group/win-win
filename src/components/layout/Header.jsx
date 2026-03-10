@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import Button from '../ui/Button'
@@ -15,9 +15,25 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const handleRequestQuoteClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleMobileNavigation = (href) => (event) => {
+    event.preventDefault()
+    setIsMobileMenuOpen(false)
+
+    if (location.pathname !== href) {
+      navigate(href)
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+    })
   }
 
   useEffect(() => {
@@ -134,6 +150,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     to={item.href}
+                    onClick={handleMobileNavigation(item.href)}
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
                       location.pathname === item.href
                         ? 'bg-green-50 text-green-500'
