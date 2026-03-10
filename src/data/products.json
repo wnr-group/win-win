@@ -949,7 +949,12 @@
     "/assets/brandimg/etptool4.jpg",
     "/assets/brandimg/etptool5.jpg",
     "/assets/brandimg/etptool6.jpg",
-    "/assets/brandimg/etptool7.jpg"
+    "/assets/brandimg/etptool7.jpg",
+    "/assets/brandimg/etp-cnc1.jpg",
+    "/assets/brandimg/etp-cnc2.jpg",
+    "/assets/brandimg/etp-cnc3.jpg",
+    "/assets/brandimg/etp-cnc4.jpg",
+    "/assets/brandimg/etp-cnc5.jpg"
   ]
   },
   {
@@ -1052,7 +1057,7 @@
     "carouselImages": [
       "/assets/brandimg/boehlerit-tool1.jpg",
       "/assets/brandimg/boehlerit-tool2.jpg",
-      "/assets/brandimg/boehlerit-tool3.png",
+      "/assets/brandimg/boehlerit-tool3.jpg",
       "/assets/brandimg/boehlerit-tool4.jpg",
       "/assets/brandimg/boehlerit-tool5.jpg"
     ]
