@@ -65,14 +65,14 @@ export default function Modal({
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2, type: 'spring', damping: 25 }}
             className={clsx(
-              'relative w-full bg-white rounded-2xl shadow-2xl',
+              'relative w-full bg-white rounded-2xl shadow-2xl max-h-[90vh] flex flex-col',
               sizes[size],
               className
             )}
           >
             {/* Header */}
             {(title || showCloseButton) && (
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              <div className="flex items-center justify-between p-6 border-b border-gray-100 flex-shrink-0">
                 {title && (
                   <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
                 )}
@@ -88,7 +88,7 @@ export default function Modal({
             )}
 
             {/* Body */}
-            <div className="p-6">
+            <div className="p-6 overflow-y-auto flex-1">
               {children}
             </div>
           </motion.div>

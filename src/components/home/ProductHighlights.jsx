@@ -673,8 +673,8 @@ function SeriesDetailModal({ series, onClose }) {
   )
 }
 
-// Collect all images that need to be preloaded
-const getAllImageUrls = () => {
+// Collect all images that need to be preloaded (called once, outside component)
+const allImageUrls = (() => {
   const urls = []
   // Background images
   productSeries.forEach(series => {
@@ -685,15 +685,14 @@ const getAllImageUrls = () => {
     })
   })
   return urls
-}
+})()
 
 // Main Component
 export default function ProductHighlights() {
   const [selectedSeries, setSelectedSeries] = useState(null)
 
   // Preload all images
-  const imageUrls = getAllImageUrls()
-  const { imagesLoaded, loadProgress } = useImagePreloader(imageUrls)
+  const { imagesLoaded, loadProgress } = useImagePreloader(allImageUrls)
 
   return (
     <section>

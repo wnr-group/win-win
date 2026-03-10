@@ -17,17 +17,16 @@ const stats = [
 ];
 
 
+const heroImages = [
+  "/assets/hero/hero-img1.png",
+  "/assets/hero/hero-img2.png",
+  "/assets/hero/hero-img3.png",
+  "/assets/hero/hero-img4.png",
+  "/assets/hero/hero-img5.png",
+  "/assets/hero/hero-img6.png"
+];
+
 export default function Hero({ openQuoteModal }) {
-
-   const heroImages = [
-    "/assets/hero/hero-img1.png",
-    "/assets/hero/hero-img2.png",
-    "/assets/hero/hero-img3.png",
-    "/assets/hero/hero-img4.png",
-    "/assets/hero/hero-img5.png",
-    "/assets/hero/hero-img6.png"
-  ];
-
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
