@@ -47,10 +47,11 @@ const values = [
 ];
 
 const capabilities = [
+  "Solid Carbide",
+  "Tool Holding",
+  "Indexable Cutting",
+  "Machine Tool",
   "PCD & CBN Tool Solutions",
-  "Solid Carbide End Mills",
-  "Indexable Cutting Tools",
-  "Tool Holding Systems",
   "Tool Presetting Equipment",
   "Custom Tooling Solutions",
   "Technical Consultation",
