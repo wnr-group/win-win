@@ -2,43 +2,39 @@ import { useState, useEffect } from "react"
 import QuoteModal from "../common/QuoteModal"
 
 export default function ExternalBrandInfo({ brand }) {
-
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isQuoteOpen, setIsQuoteOpen] = useState(false)
 
-  if (!brand) return null
-
-  const images = brand.carouselImages || []
-
-  // Next image
-  const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    )
-  }
-
-  // Previous image
-  const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    )
-  }
-
-  // Automatic image change
-  useEffect(() => {
-    if (!images.length) return
-
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [images, currentIndex])
+  const images = brand?.carouselImages || []
+  const imageCount = images.length
 
   // Reset index when brand changes
   useEffect(() => {
     setCurrentIndex(0)
   }, [brand])
+
+  // Automatic image change
+  useEffect(() => {
+    if (imageCount === 0) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % imageCount)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [imageCount])
+
+  // Next image
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % imageCount)
+  }
+
+  // Previous image
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? imageCount - 1 : prev - 1))
+  }
+
+  if (!brand) return null
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-card">
