@@ -13,7 +13,7 @@
       "productCode": "SCFE",
       "productType": "Flat End Mill",
       "flutes": 4,
-      "materialCompatibility": "P - Steel / M - Stainless Steel / K - Cast Iron",
+      "materialCompatibility": "P - Steel / K - Cast Iron / N - Non-Ferrous",
       "application": "Slotting, Profiling, Side Milling, General Machining",
       "keyFeatures": "Standard length, 28° helix angle, High performance in soft materials",
       "features": [
@@ -52,7 +52,7 @@
       "productCode": "SCFE",
       "productType": "Flat End Mill",
       "flutes": 4,
-      "materialCompatibility": "P - Steel / M - Stainless Steel / K - Cast Iron",
+      "materialCompatibility": "P - Steel / K - Cast Iron / N - Non-Ferrous",
       "application": "Deep Slotting, Deep Profiling, Extended Reach Machining",
       "keyFeatures": "Long cutting length, 28° helix angle, Extended reach capability",
       "features": [
@@ -91,7 +91,7 @@
       "productCode": "SCFE",
       "productType": "Flat End Mill",
       "flutes": 4,
-      "materialCompatibility": "P - Steel / M - Stainless Steel / K - Cast Iron",
+      "materialCompatibility": "P - Steel / K - Cast Iron / N - Non-Ferrous",
       "application": "Very Deep Cavities, Maximum Reach Operations, Deep Mold Machining",
       "keyFeatures": "Extra long cutting length, 28° helix angle, Maximum reach",
       "features": [
