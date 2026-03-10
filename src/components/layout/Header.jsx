@@ -11,10 +11,14 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-export default function Header({ openQuoteModal }) {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+
+  const handleRequestQuoteClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,7 +100,7 @@ export default function Header({ openQuoteModal }) {
               <Button
                 variant="primary"
                 size="md"
-                onClick={openQuoteModal}
+                onClick={handleRequestQuoteClick}
               >
                 Request Quote
               </Button>
@@ -144,7 +148,7 @@ export default function Header({ openQuoteModal }) {
                     variant="primary"
                     size="md"
                     className="w-full"
-                    onClick={openQuoteModal}
+                    onClick={handleRequestQuoteClick}
                   >
                     Request Quote
                   </Button>
