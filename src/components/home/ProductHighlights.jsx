@@ -158,12 +158,12 @@ const productSeries = [
     name: 'Economy Series',
     tagline: 'High Performance, Smart Value',
     subtitle: 'HRC 58 END MILLS',
-    description: 'Designed for demanding machining applications with excellent cost-performance ratio. TiSiN coated tools for hardened materials up to HRC 58.',
-    features: ['TiSiN Coating', '35° Helix', '2F & 4F Options', 'Long Neck Available'],
+    description: 'Designed for demanding machining applications with excellent cost-performance ratio. ALTiSiN coated tools for hardened materials up to HRC 58.',
+    features: ['ALTiSiN Coating', '35° Helix', '2F & 4F Options', 'Long Neck Available'],
     materials: ['P', 'K'], // Steel, Cast Iron (from catalog page 21)
     specs: {
       hardness: 'HRC 58',
-      coating: 'TiSiN',
+      coating: 'ALTiSiN',
       flutes: '2F / 4F',
       application: 'General Machining'
     },
@@ -209,12 +209,12 @@ const productSeries = [
     name: 'Premium Series',
     tagline: 'Ultimate Precision Engineering',
     subtitle: 'HRC 65 ULTRA PERFORMANCE',
-    description: 'The pinnacle of cutting tool technology. ALTiSiN coated for hardened steel machining up to HRC 65 with mirror-finish surface quality.',
-    features: ['ALTiSiN Coating', '35° Helix', 'Ultra-Fine Carbide', 'Mirror Finish'],
+    description: 'The pinnacle of cutting tool technology. ALTiXiN coated for hardened steel machining up to HRC 65 with mirror-finish surface quality.',
+    features: ['ALTiXiN Coating', '35° Helix', 'Ultra-Fine Carbide', 'Mirror Finish'],
     materials: ['P', 'M', 'H', 'K', 'S'], // Steel, Stainless, Hardened, Cast Iron, Super Alloys (from catalog page 33)
     specs: {
       hardness: 'HRC 65',
-      coating: 'ALTiSiN',
+      coating: 'ALTiXiN',
       flutes: '2F / 4F',
       application: 'Hardened Steel'
     },
