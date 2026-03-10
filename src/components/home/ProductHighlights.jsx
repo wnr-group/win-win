@@ -185,11 +185,11 @@ const productSeries = [
     tagline: 'Professional Grade Excellence',
     subtitle: 'HRC 55 STANDARD SERIES',
     description: 'Engineered for general machining applications in steel, cast iron, and non-ferrous materials. Available in standard, long, and extra-long configurations.',
-    features: ['Nanocomposite Coat', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
+    features: ['Advanced NanoCoating', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
     materials: ['P', 'K', 'N'], // Steel, Cast Iron, Non-Ferrous (from catalog page 5)
     specs: {
       hardness: 'HRC 55',
-      coating: 'Nanocomposite',
+      coating: 'Advanced NanoCoating',
       flutes: '4F',
       application: 'Precision Machining'
     },
