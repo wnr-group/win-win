@@ -1,5 +1,11 @@
-const CACHE_NAME = 'winwin-assets-v1'
-const ASSET_PATH = '/assets/'
+const CACHE_NAME = 'winwin-images-v1'
+const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.ico']
+
+// Check if request is for an image
+function isImageRequest(url) {
+  const pathname = url.pathname.toLowerCase()
+  return IMAGE_EXTENSIONS.some((ext) => pathname.endsWith(ext))
+}
 
 // Install event - cache opens
 self.addEventListener('install', (event) => {
@@ -12,19 +18,19 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter((name) => name.startsWith('winwin-assets-') && name !== CACHE_NAME)
+          .filter((name) => name.startsWith('winwin-') && name !== CACHE_NAME)
           .map((name) => caches.delete(name))
       )
     }).then(() => self.clients.claim())
   )
 })
 
-// Fetch event - cache-first strategy for assets
+// Fetch event - cache-first strategy for all images
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url)
 
-  // Only cache GET requests for /assets/*
-  if (event.request.method !== 'GET' || !url.pathname.startsWith(ASSET_PATH)) {
+  // Only cache GET requests for images
+  if (event.request.method !== 'GET' || !isImageRequest(url)) {
     return
   }
 
