@@ -184,7 +184,7 @@ const productSeries = [
     name: 'Prime Series',
     tagline: 'Professional Grade Excellence',
     subtitle: 'HRC 55 STANDARD SERIES',
-    description: 'Engineered for general machining applications in steel, stainless steel, and cast iron. Available in standard, long, and extra-long configurations.',
+    description: 'Engineered for general machining applications in steel, cast iron, and non-ferrous materials. Available in standard, long, and extra-long configurations.',
     features: ['Nanocomposite Coat', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
     materials: ['P', 'K', 'N'], // Steel, Cast Iron, Non-Ferrous (from catalog page 5)
     specs: {
