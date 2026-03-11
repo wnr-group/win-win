@@ -158,12 +158,12 @@ const productSeries = [
     name: 'Economy Series',
     tagline: 'High Performance, Smart Value',
     subtitle: 'HRC 58 END MILLS',
-    description: 'Designed for demanding machining applications with excellent cost-performance ratio. TiSiN coated tools for hardened materials up to HRC 58.',
-    features: ['TiSiN Coating', '35° Helix', '2F & 4F Options', 'Long Neck Available'],
+    description: 'Designed for demanding machining applications with excellent cost-performance ratio. ALTiSiN coated tools for hardened materials up to HRC 58.',
+    features: ['ALTiSiN Coating', '35° Helix', '2F & 4F Options', 'Long Neck Available'],
     materials: ['P', 'K'], // Steel, Cast Iron (from catalog page 21)
     specs: {
       hardness: 'HRC 58',
-      coating: 'TiSiN',
+      coating: 'ALTiSiN',
       flutes: '2F / 4F',
       application: 'General Machining'
     },
@@ -184,12 +184,12 @@ const productSeries = [
     name: 'Prime Series',
     tagline: 'Professional Grade Excellence',
     subtitle: 'HRC 55 STANDARD SERIES',
-    description: 'Engineered for general machining applications in steel, stainless steel, and cast iron. Available in standard, long, and extra-long configurations.',
-    features: ['Nanocomposite Coat', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
+    description: 'Engineered for general machining applications in steel, cast iron, and non-ferrous materials. Available in standard, long, and extra-long configurations.',
+    features: ['Advanced NanoCoating', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
     materials: ['P', 'K', 'N'], // Steel, Cast Iron, Non-Ferrous (from catalog page 5)
     specs: {
       hardness: 'HRC 55',
-      coating: 'Nanocomposite',
+      coating: 'Advanced NanoCoating',
       flutes: '4F',
       application: 'Precision Machining'
     },
@@ -209,12 +209,12 @@ const productSeries = [
     name: 'Premium Series',
     tagline: 'Ultimate Precision Engineering',
     subtitle: 'HRC 65 ULTRA PERFORMANCE',
-    description: 'The pinnacle of cutting tool technology. ALTiSiN coated for hardened steel machining up to HRC 65 with mirror-finish surface quality.',
-    features: ['ALTiSiN Coating', '35° Helix', 'Ultra-Fine Carbide', 'Mirror Finish'],
+    description: 'The pinnacle of cutting tool technology. ALTiXiN coated for hardened steel machining up to HRC 65 with mirror-finish surface quality.',
+    features: ['ALTiXiN Coating', '35° Helix', 'Ultra-Fine Carbide', 'Mirror Finish'],
     materials: ['P', 'M', 'H', 'K', 'S'], // Steel, Stainless, Hardened, Cast Iron, Super Alloys (from catalog page 33)
     specs: {
       hardness: 'HRC 65',
-      coating: 'ALTiSiN',
+      coating: 'ALTiXiN',
       flutes: '2F / 4F',
       application: 'Hardened Steel'
     },
@@ -673,8 +673,8 @@ function SeriesDetailModal({ series, onClose }) {
   )
 }
 
-// Collect all images that need to be preloaded
-const getAllImageUrls = () => {
+// Collect all images that need to be preloaded (called once, outside component)
+const allImageUrls = (() => {
   const urls = []
   // Background images
   productSeries.forEach(series => {
@@ -685,15 +685,14 @@ const getAllImageUrls = () => {
     })
   })
   return urls
-}
+})()
 
 // Main Component
 export default function ProductHighlights() {
   const [selectedSeries, setSelectedSeries] = useState(null)
 
   // Preload all images
-  const imageUrls = getAllImageUrls()
-  const { imagesLoaded, loadProgress } = useImagePreloader(imageUrls)
+  const { imagesLoaded, loadProgress } = useImagePreloader(allImageUrls)
 
   return (
     <section>

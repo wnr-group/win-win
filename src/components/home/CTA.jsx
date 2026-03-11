@@ -64,7 +64,7 @@ export default function CTA({ openQuoteModal }) {
                 </div>
               </a>
               <a
-                href="mailto:winwintoolingsolutions@gmail.com"
+                href="mailto:admin@win-wintoolingsolutions.com"
                 className="flex items-center text-white hover:text-green-400 transition-colors"
               >
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mr-3">
@@ -72,7 +72,7 @@ export default function CTA({ openQuoteModal }) {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Email Us</p>
-                  <p className="font-semibold">winwintoolingsolutions@gmail.com</p>
+                  <p className="font-semibold">admin@win-wintoolingsolutions.com</p>
                 </div>
               </a>
             </div>

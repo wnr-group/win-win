@@ -365,7 +365,7 @@ export default function ProductDetail({ openQuoteModal }) {
   icon={<Download className="w-5 h-5" />}
   onClick={() => {
     const link = document.createElement("a");
-    link.href = "/catalog/WinWin-Catalog.pdf";
+    link.href = "https://spkrqnrpdmzmrzfuzvah.supabase.co/storage/v1/object/public/catalog/WinWin-Catalog.pdf";
     link.download = "WinWin-Catalog.pdf";
     document.body.appendChild(link);
     link.click();

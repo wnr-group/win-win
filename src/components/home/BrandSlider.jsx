@@ -46,7 +46,11 @@ const brands = [
     logo: '/assets/brands/speroni.png',
     url: 'https://speroni.info/en/',
   },
-  
+  {
+    name: 'Boehlerit',
+    logo: '/assets/brands/boehlerit.png',
+    url: 'https://www.boehlerit.com/en/',
+  },
 ]
 
 export default function BrandSlider() {

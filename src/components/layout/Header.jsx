@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import Button from '../ui/Button'
@@ -11,10 +11,30 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-export default function Header({ openQuoteModal }) {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleRequestQuoteClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleMobileNavigation = (href) => (event) => {
+    event.preventDefault()
+    setIsMobileMenuOpen(false)
+
+    if (location.pathname !== href) {
+      navigate(href)
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      })
+    })
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,9 +58,9 @@ export default function Header({ openQuoteModal }) {
               <Phone className="w-4 h-4 mr-2" />
               +91 73387 17209
             </a>
-            <a href="mailto:winwintoolingsolutions@gmail.com" className="flex items-center hover:text-green-400 transition-colors">
+            <a href="mailto:admin@win-wintoolingsolutions.com" className="flex items-center hover:text-green-400 transition-colors">
               <Mail className="w-4 h-4 mr-2" />
-              winwintoolingsolutions@gmail.com
+              admin@win-wintoolingsolutions.com
             </a>
           </div>
           <div className="text-gray-300">
@@ -96,7 +116,7 @@ export default function Header({ openQuoteModal }) {
               <Button
                 variant="primary"
                 size="md"
-                onClick={openQuoteModal}
+                onClick={handleRequestQuoteClick}
               >
                 Request Quote
               </Button>
@@ -130,6 +150,7 @@ export default function Header({ openQuoteModal }) {
                   <Link
                     key={item.name}
                     to={item.href}
+                    onClick={handleMobileNavigation(item.href)}
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
                       location.pathname === item.href
                         ? 'bg-green-50 text-green-500'
@@ -144,7 +165,7 @@ export default function Header({ openQuoteModal }) {
                     variant="primary"
                     size="md"
                     className="w-full"
-                    onClick={openQuoteModal}
+                    onClick={handleRequestQuoteClick}
                   >
                     Request Quote
                   </Button>
@@ -154,9 +175,9 @@ export default function Header({ openQuoteModal }) {
                     <Phone className="w-4 h-4 mr-2" />
                     +91 73387 17209
                   </a>
-                  <a href="mailto:winwintoolingsolutions@gmail.com" className="flex items-center">
+                  <a href="mailto:admin@win-wintoolingsolutions.com" className="flex items-center">
                     <Mail className="w-4 h-4 mr-2" />
-                    winwintoolingsolutions@gmail.com
+                    admin@win-wintoolingsolutions.com
                   </a>
                 </div>
               </div>

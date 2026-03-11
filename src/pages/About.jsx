@@ -47,10 +47,11 @@ const values = [
 ];
 
 const capabilities = [
+  "Solid Carbide",
+  "Tool Holding",
+  "Indexable Cutting",
+  "Machine Tool",
   "PCD & CBN Tool Solutions",
-  "Solid Carbide End Mills",
-  "Indexable Cutting Tools",
-  "Tool Holding Systems",
   "Tool Presetting Equipment",
   "Custom Tooling Solutions",
   "Technical Consultation",
@@ -311,25 +312,27 @@ export default function About() {
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Committed to Excellence{" "}
-              <span className="text-green-500">Quality Standards</span>
+              <span className="text-green-500">Every Step of the Way</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Every product we supply undergoes rigorous quality checks. We work
-              only with certified manufacturers who meet international quality
-              standards including ISO 9001:2015.
+              Quality is at the heart of everything we do. We partner exclusively with
+              world-renowned manufacturers who maintain the highest international
+              standards. Every product undergoes thorough inspection before reaching
+              you, backed by our 25+ years of industry expertise and unwavering
+              commitment to customer satisfaction.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">
-                ISO 9001:2015
+                Rigorous Inspection
               </div>
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">
-                CE Certified
+                Global Brand Partners
               </div>
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">
-                Quality Tested
+                Expert Technical Support
               </div>
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">
-                Warranty Covered
+                Customer Satisfaction
               </div>
             </div>
           </motion.div>
