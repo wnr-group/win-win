@@ -177,7 +177,7 @@
         "ALTiSiN coating for wear resistance",
         "Ideal for finishing operations"
       ],
-      "image": "/assets/products/economy-2f-bn.png",
+      "image": "/assets/products/economy-2f-bnmill.png",
       "description": "The 2F BN is a 2-flute ball nose end mill from the Economy Series. With TiSiN coating and capability up to HRC 58, it's designed for 3D contouring, finishing operations, and complex surface machining with superior surface quality.",
       "specifications": {
         "Series": "ECONOMY",
@@ -216,7 +216,7 @@
         "ALTiSiN coating for extended tool life",
         "Efficient material removal"
       ],
-      "image": "/assets/products/economy-4f-bn.png",
+      "image": "/assets/products/economy-4f-bnm.png",
       "description": "The 4F BN is a 4-flute ball nose end mill from the Economy Series. The 4-flute design enables higher feed rates while maintaining excellent surface finish, making it ideal for semi-finishing and high-speed 3D contouring up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -255,7 +255,7 @@
         "ALTiSiN coating for wear resistance",
         "Reduced corner chipping"
       ],
-      "image": "/assets/products/economy-4f-rem.png",
+      "image": "/assets/products/economy-4f-srem.png",
       "description": "The 4F REM is a 4-flute corner radius end mill from the Economy Series. The corner radius geometry reduces stress concentration and chipping, extending tool life while providing superior edge quality in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -294,7 +294,7 @@
         "ALTiSiN coating for durability",
         "Reduced vibration in deep cuts"
       ],
-      "image": "/assets/products/economy-4f-lnfem.png",
+      "image": "/assets/products/economy-4f-lnrfem.png",
       "description": "The 4F LNFEM is a 4-flute long neck flat end mill from the Economy Series. The extended neck design allows access to deep ribs and pockets while maintaining rigidity, ideal for mold and die work in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -333,7 +333,7 @@
         "ALTiSiN coating for wear resistance",
         "Superior deep cavity finishing"
       ],
-      "image": "/assets/products/economy-2f-lnbn.png",
+      "image": "/assets/products/economy-2f-lnrbn.png",
       "description": "The 2F LNBN is a 2-flute long neck ball nose end mill from the Economy Series. Combining long reach with ball nose geometry, it excels in deep 3D contouring and finishing operations in molds and dies up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
@@ -373,7 +373,7 @@
         "ALTiSiN coating for durability",
         "Reduced corner stress in deep cuts"
       ],
-      "image": "/assets/products/economy-4f-lnrrem.png",
+      "image": "/assets/products/economy-4f-lnrremill.png",
       "description": "The 4F LNRREM is a 4-flute long neck radius end mill from the Economy Series. It combines deep reach capability with corner radius protection, ideal for deep profiling and corner radius machining in hardened materials up to HRC 58.",
       "specifications": {
         "Series": "ECONOMY",
