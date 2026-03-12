@@ -924,13 +924,13 @@
     "externalUrl": "https://catalog.tungaloy.com/Index.aspx?lang=EN&GFSTYP=M",
     "productCount": 0,
       "carouselImages": [
-    "/assets/brandimg/tungaloytool.jpg",
-    "/assets/brandimg/tungaloyturning.jpg",
-    "/assets/brandimg/tungaloygrooving.jpg",
-    "/assets/brandimg/tungaloytool4.jpg",
-    "/assets/brandimg/tungaloytool5.jpg",
-    "/assets/brandimg/tungaloytool6.jpg",
-    "/assets/brandimg/tungaloytool7.jpg"
+    "/assets/brandimg/tungaloy-tool-1.jpg",
+    "/assets/brandimg/tungaloy-tool-2.jpg",
+    "/assets/brandimg/tungaloy-tool-3.jpg",
+    "/assets/brandimg/tungaloy-tool-4.jpg",
+    "/assets/brandimg/tungaloy-tool-5.jpg",
+    "/assets/brandimg/tungaloy-tool-6.jpg",
+    "/assets/brandimg/tungaloy-tool-7.jpg"
     
   ]
   },
@@ -939,7 +939,7 @@
     "slug": "etp",
     "type": "external",
     "description": "Hydraulic clamping systems for precision machining applications.",
-    "image": "/assets/brands/etp.png",
+    "image": "/assets/brands/etp-logo.jpg",
     "externalUrl": "https://www.etp.se/en",
        "productCount": 0,
          "carouselImages": [

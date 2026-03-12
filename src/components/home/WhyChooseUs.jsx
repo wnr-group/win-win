@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Your Trusted Partner in
-              <span className="text-green-500"> Precision Tooling</span>
+              <span className="text-green-500"> Total Tooling Solutions</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               With over 15 years of industry experience, we've built our
@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <div className="text-4xl font-bold text-navy-500 mb-1">500+</div>
+                <div className="text-4xl font-bold text-navy-500 mb-1">100+</div>
                 <div className="text-gray-600">Happy Clients</div>
               </motion.div>
               <motion.div

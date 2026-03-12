@@ -23,7 +23,7 @@ const brands = [
   },
   {
     name: 'ETP',
-    logo: '/assets/brands/etp.png',
+    logo: '/assets/brands/etp-logo.jpg',
     url: 'https://www.etp.se/en',
   },
   {

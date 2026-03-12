@@ -7,7 +7,7 @@ import Badge from '../ui/Badge'
 const seriesColors = {
   PRIME: { bg: 'bg-green-500', text: 'text-white' },
   ECONOMY: { bg: 'bg-orange-500', text: 'text-white' },
-  PREMIUM: { bg: 'bg-red-500', text: 'text-white' },
+  PREMIUM: { bg: 'bg-yellow-500', text: 'text-white' },
   ALU: { bg: 'bg-blue-500', text: 'text-white' },
 }
 
