@@ -14,7 +14,7 @@ export default function Home({ openQuoteModal }) {
   return (
     <>
       <Helmet>
-        <title>{shortName} - Premium Industrial Tooling Solutions</title>
+        <title>{shortName} - TOTAL TOOLING SOLUTIONS PROVIDERS</title>
         <meta
           name="description"
           content={`${name} - Your trusted partner for world-class cutting tools, precision equipment, and custom machining solutions. PCD tools, carbide end mills, tool holders, and more.`}

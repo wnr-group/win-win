@@ -13,7 +13,7 @@ const features = [
     icon: Shield,
     title: 'Quality Assurance',
     description:
-      'Our products ensures the world quality standard to meet customer requirements ensuring consistency of performance in their machining to get the best results',
+      'Our products ensure world quality standards to meet customer requirements, ensuring consistency of performance in machining and delivering the best results.',
     color: 'green',
   },
   {

@@ -78,7 +78,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-300 leading-relaxed">
-              Premium industrial tooling solutions provider, offering world-class cutting tools,
+              Total Tooling Solutions Providers, offering world-class cutting tools,
               tool holders, and precision machining equipment.
             </p>
           </div>

@@ -24,13 +24,13 @@ const values = [
     icon: Award,
     title: "Quality Excellence",
     description:
-      "We never compromise on quality. Every product we supply meets the highest international standards.",
+      "Quality is at the heart of everything we do. We partner exclusively with world-renowned manufacturers who maintain the highest international standards. Backed by our 25+ years of industry expertise and unwavering commitment to customer satisfaction, our products ensure world quality standards to meet customer requirements, ensuring consistency of performance in machining for the best results.",
   },
   {
     icon: Users,
     title: "Customer First",
     description:
-      "Your success is our success. We work closely with you to understand and meet your specific needs.",
+      "Our focus would be on understanding and serving customer needs towards achieving their desired results.",
   },
   {
     icon: Globe,
@@ -42,7 +42,7 @@ const values = [
     icon: Cog,
     title: "Technical Expertise",
     description:
-      "Our team of engineers provides expert guidance to help you select the right tools for your applications.",
+      "We provide combined expert solutions working with our principals to achieve the best results for our customers.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function About() {
         <title>About Us - {siteConfig.name}</title>
         <meta
           name="description"
-          content={`Learn about ${siteConfig.name} - Your trusted partner for premium industrial tooling solutions with 15+ years of experience.`}
+          content={`Learn about ${siteConfig.name} - Your trusted partner for premium industrial tooling solutions with 25+ years of experience.`}
         />
         <link rel="canonical" href={getFullUrl('/about')} />
       </Helmet>
