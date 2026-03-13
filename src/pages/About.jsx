@@ -47,12 +47,12 @@ const values = [
 ];
 
 const capabilities = [
-  "Solid Carbide",
-  "Tool Holding",
-  "Indexable Cutting",
+  "Solid Carbide End Mills",
+  "Tool Holders",
+  "Indexable Cutting Tools",
   "Machine Tool",
   "PCD & CBN Tool Solutions",
-  "Tool Presetting Equipment",
+  "Tool Presetter - Online & Offline",
   "Custom Tooling Solutions",
   "Technical Consultation",
 ];
@@ -162,15 +162,15 @@ export default function About() {
               {/* Sister Company Highlight */}
               <div className="sister-company">
                 <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full mb-3">
-                  Sister Brand
+                  Our Brand
                 </span>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  WIN WIN END MILL
+                  WIN WIN END MILLS
                 </h3>
 
                 <p className="text-gray-600 text-sm">
-                  Providing Tool Solutions and leading-edge machining solutions,
+                  Providing Win Win Tooling Solutions along with leading-edge machining solutions,
                   delivering precision and performance to modern manufacturing.
                 </p>
               </div>
