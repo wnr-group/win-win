@@ -323,7 +323,7 @@ export default function About() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">
-                Rigorous Inspection
+                High Quality Products
               </div>
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">
                 Global Brand Partners
