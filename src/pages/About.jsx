@@ -9,6 +9,10 @@ import {
   Cog,
   Shield,
   TrendingUp,
+  RefreshCw,
+  Briefcase,
+  Package,
+  CheckCircle,
 } from "lucide-react";
 import { siteConfig, getFullUrl } from "../utils/siteConfig";
 
@@ -21,16 +25,10 @@ const stats = [
 
 const values = [
   {
-    icon: Award,
-    title: "Quality Excellence",
-    description:
-      "We never compromise on quality. Every product we supply meets the highest international standards.",
-  },
-  {
     icon: Users,
     title: "Customer First",
     description:
-      "Your success is our success. We work closely with you to understand and meet your specific needs.",
+      "Our focus would be on understanding & serving customer needs towards achieving the need of customer & getting desired results.",
   },
   {
     icon: Globe,
@@ -39,10 +37,16 @@ const values = [
       "We partner with world-leading manufacturers to bring you the best tooling solutions available.",
   },
   {
+    icon: Award,
+    title: "Quality Excellence",
+    description:
+      "Quality is at the heart of everything we do. We partner exclusively with world-renowned manufacturers who maintain the highest international standards. Backed by our 25+ years of industry expertise and unwavering commitment to customer satisfaction, our products ensure world quality standards to meet customer requirements, ensuring consistency of performance in their machining to get the best results.",
+  },
+  {
     icon: Cog,
     title: "Technical Expertise",
     description:
-      "Our team of engineers provides expert guidance to help you select the right tools for your applications.",
+      "We provide combined expert solutions working with our principals to get best results for our customers.",
   },
 ];
 
@@ -64,7 +68,7 @@ export default function About() {
         <title>About Us - {siteConfig.name}</title>
         <meta
           name="description"
-          content={`Learn about ${siteConfig.name} - Your trusted partner for premium industrial tooling solutions with 15+ years of experience.`}
+          content={`Learn about ${siteConfig.name} - Your trusted partner for premium industrial tooling solutions with 25+ years of experience.`}
         />
         <link rel="canonical" href={getFullUrl('/about')} />
       </Helmet>
@@ -122,6 +126,139 @@ export default function About() {
         </div>
       </section>
 
+      {/* Company Profile Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-50 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-navy-500/5 rounded-full blur-3xl" />
+
+        <div className="container-custom relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-4">
+              Who We Are
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Company <span className="text-green-500">Profile</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left - Main Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              {/* Introduction */}
+              <div className="bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl p-8 text-white">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                  <Briefcase className="w-6 h-6 text-green-400" />
+                  Total Tooling Solution & Service Providers
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <span className="text-white font-semibold">Win Win Tooling Solutions</span> offers a wide range of tooling solutions to manufacturing industries such as die & mould, automotive, machinery, aerospace, Medical, Oil & Gas with unique products. We consistently strive to be a company which would respond rapidly to the changing business needs of our customers.
+                </p>
+              </div>
+
+              {/* Vision Quote */}
+              <div className="bg-green-50 border-l-4 border-green-500 rounded-r-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <RefreshCw className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">"Continuous Improvement"</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      is our vision that we're dedicated to pursue all the time, so we always strive for providing the right products and service quality, maintaining stable delivery promise and securing the best before/after sales services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience */}
+              <div className="bg-gray-50 rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <Award className="w-8 h-8 text-navy-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900 mb-2">25+ Years of Excellence</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      Our Business Manager has 25 plus years of sales & marketing experience working with major cutting tool companies, bringing unparalleled expertise to every customer interaction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right - Products & Offerings */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              {/* Products Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <Package className="w-6 h-6 text-green-500" />
+                  Our Product Range
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  We offer comprehensive tooling solutions that support in enhancing your process & achieve better cost saving solutions in your applications:
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    "CNC & VMC Machines",
+                    "Cutting Tools",
+                    "Tool Holders",
+                    "Tool Presetters",
+                    "Measuring & Probing",
+                    "Testing Technology",
+                    "Storage Products",
+                    "Laser Marking",
+                    "CMM Equipment",
+                    "Angle Heads",
+                    "Inserts",
+                    "Custom Solutions",
+                  ].map((product) => (
+                    <div key={product} className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span className="text-sm text-gray-700">{product}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Industries Served */}
+              <div className="bg-green-50 border border-green-100 rounded-2xl p-8">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Industries We Serve</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Die & Mould",
+                    "Automotive",
+                    "Aerospace",
+                    "Medical",
+                    "Oil & Gas",
+                    "Machinery",
+                    "General Manufacturing",
+                  ].map((industry) => (
+                    <span
+                      key={industry}
+                      className="px-4 py-2 bg-white rounded-full text-sm text-gray-700 font-medium border border-green-200 shadow-sm"
+                    >
+                      {industry}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Story Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
@@ -169,9 +306,21 @@ export default function About() {
                   WIN WIN END MILLS
                 </h3>
 
+                <p className="text-gray-600 text-sm mb-3">
+                  WIN WIN's new range of Solid Carbide End Mills represent a new direction in our branding of end mill products all under the WIN WIN brand name.
+                </p>
+
+                <p className="text-gray-600 text-sm font-semibold mb-2">Features and Benefits:</p>
+                <p className="text-gray-600 text-sm mb-3">
+                  Solid carbide end mills that are suited for industries in Die Mold upto HRC65, Automotive, Medical, Valve machining, Aluminium machining & most common milling operations such as slotting, plunging, side and face milling, as well as ramping and copy milling in a wide range of materials such as P20, Steels, CI, SS, Titanium, Inconel etc.
+                </p>
+
+                <p className="text-gray-600 text-sm mb-3">
+                  Our range of Solid carbide Endmills for die & mold come with a variety of series. Each series with their own characteristics and application strengths.
+                </p>
+
                 <p className="text-gray-600 text-sm">
-                  Providing Win Win Tooling Solutions along with leading-edge machining solutions,
-                  delivering precision and performance to modern manufacturing.
+                  WIN WIN end mill family offers, ranges of uncoated and coated end mills with options for square end, ball nosed, and radius corners as well as various length options.
                 </p>
               </div>
             </motion.div>
@@ -315,11 +464,7 @@ export default function About() {
               <span className="text-green-500">Every Step of the Way</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Quality is at the heart of everything we do. We partner exclusively with
-              world-renowned manufacturers who maintain the highest international
-              standards. Every product undergoes thorough inspection before reaching
-              you, backed by our 25+ years of industry expertise and unwavering
-              commitment to customer satisfaction, Our products ensures the world quality standard to meet customer requirements ensuring consistency of performance in their machining to get the best results
+              Our products ensures the world quality standard to meet customer requirements ensuring consistency of performance in their machining to get the best results.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">

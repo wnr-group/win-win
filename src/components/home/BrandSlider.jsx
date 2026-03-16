@@ -70,7 +70,7 @@ export default function BrandSlider() {
             Trusted <span className="text-green-500">Brands</span> We Represent
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Partnering with world-class manufacturers to deliver premium tooling solutions
+            Partnering with world-class manufacturers to deliver total tooling solutions
           </p>
         </motion.div>
       </div>
