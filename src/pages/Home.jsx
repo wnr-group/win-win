@@ -4,8 +4,9 @@ import BrandSlider from '../components/home/BrandSlider'
 import ProductHighlights from '../components/home/ProductHighlights'
 import WhyChooseUs from '../components/home/WhyChooseUs'
 import Industries from '../components/home/Industries'
-import Testimonials from '../components/home/Testimonials'
+import Customers from '../components/home/Customers'
 import CTA from '../components/home/CTA'
+import ToolingSolutions from '../components/home/ToolingSolutions'
 import { siteConfig, getFullUrl } from '../utils/siteConfig'
 
 export default function Home({ openQuoteModal }) {
@@ -102,10 +103,11 @@ export default function Home({ openQuoteModal }) {
 
       <Hero openQuoteModal={openQuoteModal} />
       <BrandSlider />
+      <ToolingSolutions />
       <ProductHighlights />
       <WhyChooseUs />
       <Industries />
-      <Testimonials />
+      <Customers />
       <CTA openQuoteModal={openQuoteModal} />
     </>
   )

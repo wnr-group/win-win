@@ -166,8 +166,10 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 text-green-400 flex-shrink-0" />
                 <span className="text-gray-300">
-                  Lenin Nagar, Ambattur<br />
-                  Chennai - 600053
+                  F3, Gokulam's Balaji Manor,<br />
+                  Old no: 4, New no: 6, 2nd St,<br />
+                  Lenin Nagar, Ambattur,<br />
+                  Chennai, Tamil Nadu 600053
                 </span>
               </li>
               <li>

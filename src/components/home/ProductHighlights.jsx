@@ -154,6 +154,31 @@ function MaterialTags({ tags, size = 'md' }) {
 // Product Series Data from Catalog (matched with products.json)
 const productSeries = [
   {
+    id: 'prime',
+    name: 'Prime Series',
+    tagline: 'Professional Grade Excellence',
+    subtitle: 'HRC 55 STANDARD SERIES',
+    description: 'Engineered for general machining applications in steel, cast iron, and non-ferrous materials. Available in standard, long, and extra-long configurations.',
+    features: ['Advanced NanoCoating', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
+    materials: ['P', 'K', 'N'], // Steel, Cast Iron, Non-Ferrous (from catalog page 5)
+    specs: {
+      hardness: 'HRC 55',
+      coating: 'Advanced NanoCoating',
+      flutes: '4F',
+      application: 'Precision Machining'
+    },
+    tools: [
+      { name: 'Standard Flat End Mill', image: '/assets/products/prime-scfe.png' },
+      { name: 'Long Flat End Mill', image: '/assets/products/prime-lcfe.png' },
+      { name: 'Extra Long End Mill', image: '/assets/products/prime-elcfe.png' },
+    ],
+    heroImage: '/assets/cnc-machine-bg-2.jpg',
+    accentColor: '#22c55e',
+    gradientFrom: '#0f172a',
+    gradientTo: '#1e293b',
+    icon: Shield,
+  },
+  {
     id: 'economy',
     name: 'Economy Series',
     tagline: 'High Performance, Smart Value',
@@ -178,31 +203,6 @@ const productSeries = [
     gradientFrom: '#0f172a',
     gradientTo: '#1e293b',
     icon: Zap,
-  },
-  {
-    id: 'prime',
-    name: 'Prime Series',
-    tagline: 'Professional Grade Excellence',
-    subtitle: 'HRC 55 STANDARD SERIES',
-    description: 'Engineered for general machining applications in steel, cast iron, and non-ferrous materials. Available in standard, long, and extra-long configurations.',
-    features: ['Advanced NanoCoating', '28° Helix', 'Std/Long/XL Reach', 'Micro-Grain Carbide'],
-    materials: ['P', 'K', 'N'], // Steel, Cast Iron, Non-Ferrous (from catalog page 5)
-    specs: {
-      hardness: 'HRC 55',
-      coating: 'Advanced NanoCoating',
-      flutes: '4F',
-      application: 'Precision Machining'
-    },
-    tools: [
-      { name: 'Standard Flat End Mill', image: '/assets/products/prime-scfe.png' },
-      { name: 'Long Flat End Mill', image: '/assets/products/prime-lcfe.png' },
-      { name: 'Extra Long End Mill', image: '/assets/products/prime-elcfe.png' },
-    ],
-    heroImage: '/assets/cnc-machine-bg-2.jpg',
-    accentColor: '#22c55e',
-    gradientFrom: '#0f172a',
-    gradientTo: '#1e293b',
-    icon: Shield,
   },
   {
     id: 'premium',

@@ -14,7 +14,7 @@ export const siteConfig = {
     phone: '+91-73387-17209',
     email: 'admin@win-wintoolingsolutions.com',
     address: {
-      street: 'Lenin Nagar, Ambattur',
+      street: "F3, Gokulam's Balaji Manor, Old no: 4, New no: 6, 2nd St, Lenin Nagar, Ambattur",
       city: 'Chennai',
       postalCode: '600053',
       region: 'Tamil Nadu',
