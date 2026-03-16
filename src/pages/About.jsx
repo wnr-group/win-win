@@ -319,7 +319,7 @@ export default function About() {
               world-renowned manufacturers who maintain the highest international
               standards. Every product undergoes thorough inspection before reaching
               you, backed by our 25+ years of industry expertise and unwavering
-              commitment to customer satisfaction.
+              commitment to customer satisfaction, Our products ensures the world quality standard to meet customer requirements ensuring consistency of performance in their machining to get the best results
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-6 py-3 bg-gray-100 rounded-full text-gray-700 font-medium">

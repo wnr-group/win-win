@@ -716,7 +716,7 @@ export default function ProductHighlights() {
               transition={{ delay: 0.2 }}
               className="inline-block px-4 py-2 bg-navy-500/10 text-navy-500 rounded-full text-sm font-semibold tracking-wider uppercase mb-6"
             >
-              Our Product Lines
+              Win Win End Mills
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}

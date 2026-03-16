@@ -20,6 +20,20 @@ export default function Products() {
   const selectedBrand = searchParams.get("brand") || "";
   const { products, categories, brands } = productsData;
 
+  const searchReferenceKeywords = [
+  "turning",
+  "boring",
+  "grooving",
+  "parting",
+  "milling",
+  "hole making",
+  "tapping",
+  "holders",
+  "tool presetters",
+  "probing",
+  "measuring"
+];
+
   useEffect(() => {
     if (!selectedBrand) return;
 
@@ -56,16 +70,24 @@ export default function Products() {
       }
 
       // Search filter
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        return (
-          product.productName.toLowerCase().includes(query) ||
-          product.brand.toLowerCase().includes(query) ||
-          product.category.toLowerCase().includes(query) ||
-          product.productType.toLowerCase().includes(query) ||
-          product.materialCompatibility.toLowerCase().includes(query)
-        );
-      }
+     if (searchQuery) {
+  const query = searchQuery.toLowerCase();
+
+  const searchableText = [
+    product.productName,
+    product.brand,
+    product.category,
+    product.productType,
+    product.materialCompatibility,
+    product.application,
+    ...(product.keywords || []),
+    ...searchReferenceKeywords
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return searchableText.includes(query);
+}
 
       return true;
     });

@@ -16,7 +16,7 @@ const footerLinks = {
     { name: 'All Products', href: '/products' },
   ],
   brands: [
-    { name: 'Win Win End Mill', href: '/products?brand=win-win-end-mill-solutions' },
+    { name: 'Win Win End Mills', href: '/products?brand=win-win-end-mill-solutions' },
     { name: 'Palbit', href: '/products?brand=palbit' },
     { name: 'Bilz', href: '/products?brand=bilz' },
     { name: 'Tungaloy', href: '/products?brand=tungaloy' },
