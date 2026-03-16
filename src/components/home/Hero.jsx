@@ -12,7 +12,7 @@ const features = [
 
 const stats = [
   { value: "12+", label: "Global Brands", sublabel: "World-class partners" },
-  { value: "15+", label: "Years Experience", sublabel: "Industry expertise" },
+  { value: "25+", label: "Years Experience", sublabel: "Industry expertise" },
   { value: "100+", label: "Happy Clients", sublabel: "Across India" },
 ];
 
@@ -60,9 +60,9 @@ export default function Hero({ openQuoteModal }) {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
             >
-              Premium Industrial
+              Total Tooling
               <br />
-              <span className="text-green-500">Tooling Solutions</span>
+              <span className="text-green-500">Solutions Providers</span>
             </motion.h1>
 
             <motion.p

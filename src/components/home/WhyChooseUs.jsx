@@ -13,7 +13,7 @@ const features = [
     icon: Shield,
     title: 'Quality Assurance',
     description:
-      'Every product undergoes rigorous quality testing to meet international standards and specifications.',
+      'Our products ensures the world quality standard to meet customer requirements ensuring consistency of performance in their machining to get the best results',
     color: 'green',
   },
   {
@@ -27,7 +27,7 @@ const features = [
     icon: Award,
     title: 'Premium Brands',
     description:
-      'Access to world-leading tooling brands with proven track records in precision machining.',
+      'Access to world-leading tooling brands with proven track records in Total Tooling Solutions machining.',
     color: 'green',
   },
   {
@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
               <span className="text-green-500"> Total Tooling Solutions</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              With over 15 years of industry experience, we've built our
+              With over 25 years of industry experience, we've built our
               reputation on quality, reliability, and exceptional customer
               service. Our commitment to excellence drives everything we do.
             </p>
@@ -127,7 +127,7 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <div className="text-4xl font-bold text-navy-500 mb-1">15+</div>
+                <div className="text-4xl font-bold text-navy-500 mb-1">25+</div>
                 <div className="text-gray-600">Years Experience</div>
               </motion.div>
             </div>
