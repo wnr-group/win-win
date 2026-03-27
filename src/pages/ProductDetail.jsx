@@ -17,6 +17,7 @@ import Badge from "../components/ui/Badge";
 import Card from "../components/ui/Card";
 import productsData from "../data/products.json";
 import { siteConfig, getFullUrl } from "../utils/siteConfig";
+import { getSeriesBg } from "../utils/helpers";
 
 export default function ProductDetail({ openQuoteModal }) {
   const { brand, slug } = useParams();
@@ -240,7 +241,7 @@ export default function ProductDetail({ openQuoteModal }) {
                 {product.series && (
                   <span
                     className="text-white text-sm font-bold px-3 py-1.5 rounded-full"
-                    style={{ backgroundColor: product.seriesColor || '#1e3a5f' }}
+                    style={getSeriesBg(product.series)}
                   >
                     {product.series} SERIES
                   </span>

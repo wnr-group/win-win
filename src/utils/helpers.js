@@ -118,6 +118,35 @@ export function getScrollPercentage() {
   return Math.round((scrollTop / docHeight) * 100)
 }
 
+// Series-specific color definitions (product-scoped, do not affect global styles)
+const SERIES_COLOR_MAP = {
+  PRIME:   { hex: '#EAB308', textHex: '#FFFFFF' }, // yellow-500
+  ECONOMY: { hex: '#CD7F32', textHex: '#FFFFFF' }, // bronze
+  PREMIUM: { hex: '#ef4444', textHex: '#FFFFFF' }, // red-500
+  ALU:     { hex: '#3b82f6', textHex: '#FFFFFF' }, // blue-500
+}
+
+const SERIES_DEFAULT = { hex: '#1e3a5f', textHex: '#FFFFFF' }
+
+/**
+ * Returns the accent hex color for a given product series.
+ * @param {string} series - e.g. "PRIME", "ECONOMY"
+ * @returns {string} - hex color string
+ */
+export function getSeriesColor(series) {
+  return (SERIES_COLOR_MAP[series?.toUpperCase()] || SERIES_DEFAULT).hex
+}
+
+/**
+ * Returns an inline-style object { backgroundColor, color } for a series badge/highlight.
+ * @param {string} series - e.g. "PRIME", "ECONOMY"
+ * @returns {{ backgroundColor: string, color: string }}
+ */
+export function getSeriesBg(series) {
+  const entry = SERIES_COLOR_MAP[series?.toUpperCase()] || SERIES_DEFAULT
+  return { backgroundColor: entry.hex, color: entry.textHex }
+}
+
 /**
  * Copy text to clipboard
  * @param {string} text - Text to copy

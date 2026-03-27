@@ -64,7 +64,7 @@ export default function Header() {
             </a>
           </div>
           <div className="text-gray-300">
-            Premium Industrial Tooling Solutions
+            Total Tooling Solutions Providers
           </div>
         </div>
       </div>
