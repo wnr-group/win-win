@@ -370,7 +370,7 @@ const features = [
 const stats = [
   { value: "12+", label: "Global Brands", sublabel: "World-class partners" },
   { value: "15+", label: "Years Experience", sublabel: "Industry expertise" },
-  { value: "500+", label: "Happy Clients", sublabel: "Across India" },
+  { value: "100+", label: "Happy Clients", sublabel: "Across India" },
 ];
 
 const heroImages = [

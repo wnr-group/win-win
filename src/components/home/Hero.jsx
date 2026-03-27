@@ -50,7 +50,7 @@ export default function Hero({ openQuoteModal }) {
             >
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
               <span className="text-green-700 text-sm font-medium">
-                Trusted by 500+ Manufacturing Companies
+                Trusted by 100+ Manufacturing Companies
               </span>
             </motion.div>
 
@@ -71,7 +71,7 @@ export default function Hero({ openQuoteModal }) {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed"
             >
-              Your trusted partner for world-class cutting tools, precision
+              Your trusted partner in Total Tooling Solutions Providers for world-class cutting tools, precision
               equipment, and custom machining solutions. Quality you can rely on,
               delivered on time.
             </motion.p>

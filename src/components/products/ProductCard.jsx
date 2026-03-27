@@ -2,17 +2,10 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Badge from '../ui/Badge'
-
-// Series color mapping for badges
-const seriesColors = {
-  PRIME: { bg: 'bg-green-500', text: 'text-white' },
-  ECONOMY: { bg: 'bg-orange-500', text: 'text-white' },
-  PREMIUM: { bg: 'bg-red-500', text: 'text-white' },
-  ALU: { bg: 'bg-blue-500', text: 'text-white' },
-}
+import { getSeriesBg } from '../../utils/helpers'
 
 export default function ProductCard({ product, index = 0 }) {
-  const seriesStyle = seriesColors[product.series] || { bg: 'bg-navy-500', text: 'text-white' }
+  const seriesBadgeStyle = getSeriesBg(product.series)
 
   return (
     <motion.div
@@ -36,7 +29,10 @@ export default function ProductCard({ product, index = 0 }) {
 
           {/* Series Badge */}
           <div className="absolute top-4 left-4 flex gap-2">
-            <span className={`${seriesStyle.bg} ${seriesStyle.text} text-xs font-bold px-2.5 py-1 rounded-full`}>
+            <span
+              className="text-xs font-bold px-2.5 py-1 rounded-full"
+              style={seriesBadgeStyle}
+            >
               {product.series}
             </span>
             {product.hrc && (
