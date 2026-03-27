@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: ['Lenin Nagar, Ambattur', 'Chennai - 600053', 'India'],
+    details: ["F3, Gokulam's Balaji Manor,", 'Old no: 4, New no: 6, 2nd St,', 'Lenin Nagar, Ambattur,', 'Chennai, Tamil Nadu 600053'],
   },
   {
     icon: Phone,
