@@ -173,7 +173,7 @@ const productSeries = [
       { name: 'Extra Long End Mill', image: '/assets/products/prime-elcfe.png' },
     ],
     heroImage: '/assets/cnc-machine-bg-2.jpg',
-    accentColor: '#22c55e',
+    accentColor: '#EAB308',
     gradientFrom: '#0f172a',
     gradientTo: '#1e293b',
     icon: Shield,
@@ -199,7 +199,7 @@ const productSeries = [
       { name: '4F Long Neck Flat', image: '/assets/products/economySeries4FLNRFEM.png' },
     ],
     heroImage: '/assets/cnc-machining-bg.jpg',
-    accentColor: '#f97316',
+    accentColor: '#CD7F32',
     gradientFrom: '#0f172a',
     gradientTo: '#1e293b',
     icon: Zap,
@@ -710,14 +710,18 @@ export default function ProductHighlights() {
         {/* Section header */}
         <div className="bg-gradient-to-b from-white to-gray-100 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={imagesLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="inline-block px-4 py-2 bg-navy-500/10 text-navy-500 rounded-full text-sm font-semibold tracking-wider uppercase mb-6"
+              className="flex justify-center mb-8"
             >
-              Win Win End Mills
-            </motion.span>
+              <img
+                src="/assets/brands/winwin-endmills.jpg"
+                alt="Win Win End Mills"
+                className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+              />
+            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={imagesLoaded ? { opacity: 1, y: 0 } : {}}
@@ -733,8 +737,9 @@ export default function ProductHighlights() {
               transition={{ delay: 0.4 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
             >
-              Four specialized series designed to meet every machining challenge.
-              From cost-effective solutions to ultra-premium performance.
+              Four specialized series designed to meet every machining
+              challenge. From cost-effective solutions to ultra-premium
+              performance.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -776,5 +781,5 @@ export default function ProductHighlights() {
         />
       )}
     </section>
-  )
+  );
 }
