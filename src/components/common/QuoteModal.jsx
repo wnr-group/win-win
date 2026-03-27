@@ -29,6 +29,33 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
     }))
   }
 
+  // ✅ NEW: WhatsApp function (added only)
+  const handleWhatsApp = () => {
+    const whatsappNumber = "917338717209" // change if needed
+
+    const message = `
+*New Quote Request*
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company: ${formData.company}
+Designation: ${formData.designation}
+Location: ${formData.location}
+
+Product: ${formData.product}
+Quantity: ${formData.quantity}
+
+Message: ${formData.message}
+    `
+
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+
+    window.open(whatsappURL, "_blank")
+  }
+
+  // ✅ EXISTING EMAIL FUNCTION (UNCHANGED)
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -69,9 +96,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
           const errorBody = await submitError.context.json()
           setError(errorBody?.error || 'Failed to send quotation request. Please try again.')
           return
-        } catch {
-          // fall through to generic message
-        }
+        } catch {}
       }
 
       setError(submitError?.message || 'Failed to send quotation request. Please try again.')
@@ -105,6 +130,8 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
+
+          {/* FORM FIELDS (UNCHANGED) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
               label="Full Name *"
@@ -147,9 +174,8 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
               name="designation"
               placeholder="Your Designation"
               value={formData.designation}
-               onChange={handleChange}
+              onChange={handleChange}
             />
-
             <Input
               label="Location *"
               name="location"
@@ -180,16 +206,28 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
           <Textarea
             label="Additional Requirements"
             name="message"
-            placeholder="Tell us about your specific requirements, material type, dimensions, etc."
+            placeholder="Tell us about your specific requirements"
             value={formData.message}
             onChange={handleChange}
             rows={4}
           />
 
+          {/* BUTTONS (UPDATED ONLY HERE) */}
           <div className="flex justify-end space-x-3 pt-4">
             <Button type="button" variant="ghost" onClick={onClose}>
               Cancel
             </Button>
+
+            {/* ✅ WhatsApp Button */}
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleWhatsApp}
+            >
+              WhatsApp
+            </Button>
+
+            {/* ✅ Email Button (EXISTING) */}
             <Button
               type="submit"
               variant="primary"
@@ -203,6 +241,7 @@ export default function QuoteModal({ isOpen, onClose, product = null }) {
           {error ? (
             <p className="text-sm text-red-600 text-right">{error}</p>
           ) : null}
+
         </form>
       )}
     </Modal>

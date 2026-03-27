@@ -985,7 +985,7 @@
         "45° helix angle for smooth cutting",
         "Excellent chip evacuation"
       ],
-      "image": "/assets/products/alu-3FFEMFHP.png",
+      "image": "/assets/products/alu-2FBNEMFHP.png",
       "description": "The 3ALE is a 3-flute highly polished flat end mill for high-speed aluminum machining. The additional flute enables higher feed rates and productivity while maintaining excellent surface finish.",
       "specifications": {
         "Series": "ALU",
@@ -1036,7 +1036,7 @@
         "45° helix angle",
         "Mirror finish on 3D surfaces"
       ],
-      "image": "/assets/products/alu-2FBNEMFHP.png",
+      "image": "/assets/products/alu-3FFEMFHP.png",
       "description": "The 2ALBN is a 2-flute highly polished ball nose end mill for 3D contouring in aluminum and non-ferrous materials. The polished surface prevents adhesion while delivering mirror-quality 3D finishes.",
       "specifications": {
         "Series": "ALU",
@@ -1295,12 +1295,11 @@
     "externalUrl": "https://www.boehlerit.com/en/",
     "productCount": 0,
     "carouselImages": [
-      "/assets/brandimg/boehlerit-tool-1.jpg",
-      "/assets/brandimg/boehlerit-tool-2.jpg",
-      "/assets/brandimg/boehlerit-tool-3.jpg",
-      "/assets/brandimg/boehlerit-tool-4.jpg",
-      "/assets/brandimg/boehlerit-tool-5.jpg",
-      "/assets/brandimg/boehlerit-tool-6.jpg"
+      "/assets/brandimg/boehlerit-tool_1.jpg",
+      "/assets/brandimg/boehlerit-tool_2.jpg",
+      "/assets/brandimg/boehlerit-tool_3.jpg",
+      "/assets/brandimg/boehlerit-tool_4.jpg",
+      "/assets/brandimg/boehlerit-tool_5.jpg"
     ]
   }
   ]

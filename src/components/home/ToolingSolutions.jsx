@@ -35,7 +35,7 @@ export default function ToolingSolutions() {
         >
           <div className="rounded-3xl overflow-hidden shadow-2xl bg-white p-4 md:p-6">
             <img
-              src="/assets/tooling-solutions-overview.jpg"
+              src="/assets/tooling_solutions_overview.png"
               alt="Win Win Tooling Solutions - Complete tooling ecosystem featuring Presetting Technology, Cutting Tools, Integrated Tool Management, and Shrink Fit Technology"
               className="w-full h-auto rounded-2xl"
             />
