@@ -1,5 +1,5 @@
 // IMPORTANT: Bump this version number when you deploy new assets
-const CACHE_VERSION = 3
+const CACHE_VERSION = 4
 const CACHE_NAME = `winwin-images-v${CACHE_VERSION}`
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.ico']
 
