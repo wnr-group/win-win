@@ -11,14 +11,16 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-export default function Header() {
+export default function Header({ openQuoteModal }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
 
   const handleRequestQuoteClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (openQuoteModal) {
+      openQuoteModal()
+    }
   }
 
   const handleMobileNavigation = (href) => (event) => {
