@@ -122,7 +122,7 @@ export function getScrollPercentage() {
 const SERIES_COLOR_MAP = {
   PRIME:   { hex: '#EAB308', textHex: '#FFFFFF' }, // yellow-500
   ECONOMY: { hex: '#CD7F32', textHex: '#FFFFFF' }, // bronze
-  PREMIUM: { hex: '#ef4444', textHex: '#FFFFFF' }, // red-500
+  PREMIUM: { hex: '#38bdf8', textHex: '#FFFFFF' }, // sky-400 (matches P material)
   ALU:     { hex: '#3b82f6', textHex: '#FFFFFF' }, // blue-500
 }
 

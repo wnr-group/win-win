@@ -211,11 +211,11 @@ export default function About() {
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    "CNC & VMC Machines",
                     "Cutting Tools",
                     "Tool Holders",
                     "Tool Presetters",
                     "Measuring & Probing",
+                    "CNC & VMC Machines",
                     "Testing Technology",
                     "Storage Products",
                     "Laser Marking",

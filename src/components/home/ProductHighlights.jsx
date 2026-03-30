@@ -225,7 +225,7 @@ const productSeries = [
       { name: '4F Long Neck Flat', image: '/assets/products/premium-4f-lnfem.png' },
     ],
     heroImage: '/assets/cnc-machine-bg-3.jpg',
-    accentColor: '#ef4444',
+    accentColor: '#38bdf8',
     gradientFrom: '#0f172a',
     gradientTo: '#1e293b',
     icon: Gem,
