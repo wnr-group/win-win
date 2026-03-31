@@ -27,8 +27,8 @@ export default function ProductCard({ product, index = 0 }) {
             loading="lazy"
           />
 
-          {/* Series Badge */}
-          <div className="absolute top-4 left-4 flex gap-2">
+          {/* Series Badge - positioned on right side vertically to avoid overlapping product images */}
+          <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
             <span
               className="text-xs font-bold px-2.5 py-1 rounded-full"
               style={seriesBadgeStyle}
@@ -40,16 +40,13 @@ export default function ProductCard({ product, index = 0 }) {
                 HRC {product.hrc}
               </span>
             )}
-          </div>
-
-          {/* Product Code */}
-          {product.productCode && (
-            <div className="absolute bottom-4 right-4">
+            {/* Product Code */}
+            {product.productCode && (
               <span className="bg-white/90 text-gray-900 text-xs font-mono font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">
                 {product.productCode}
               </span>
-            </div>
-          )}
+            )}
+          </div>
 
           <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300" />
         </div>
