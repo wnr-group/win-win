@@ -62,7 +62,7 @@ Message: ${formData.message}
     setError('')
 
     try {
-      const { error: invokeError } = await supabase.functions.invoke('send-email', {
+      const { error: invokeError } = await supabase.functions.invoke('winwin-send-email', {
         body: {
           type: 'quote',
           data: formData,
