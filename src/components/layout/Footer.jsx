@@ -220,6 +220,23 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Powered by Bar */}
+<div className="mt-6 pt-4 border-t border-white/10 text-center pb-4">
+  <p className="text-xs text-gray-400">
+    Powered by{' '}
+    <a
+      href="https://www.wnradvisory.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline hover:text-gray-300 transition-colors"
+    >
+      WnR Group
+    </a>
+  </p>
+</div>
+
+      
     </footer>
   )
 }
